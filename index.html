@@ -3,15 +3,233 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Мой сайт</title>
+  <title>Разбор треков</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>Добро пожаловать</h1>
-  </header>
-  <main>
-    <p>Это простой сайт. Редактируй <code>index.html</code> и <code>styles.css</code>, чтобы начать.</p>
-  </main>
+  <!-- Секция 1: Landing репера -->
+  <section class="landing" id="landing">
+    <div class="landing-content">
+      <div class="rapper-photo">
+        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500&h=600&fit=crop" alt="Артист">
+      </div>
+      <div class="landing-text">
+        <h1>Разбор треков</h1>
+        <p>Привет! Здесь я разбираю треки своего любимого репера — строчка за строчкой, слово за словом. Открывай альбомы, слушай и читай вместе со мной.</p>
+        <p>Кликни на стрелку, чтобы перейти к альбомам.</p>
+      </div>
+    </div>
+    <button class="nav-arrow nav-arrow-right" id="navArrowRight" aria-label="Далее">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    </button>
+  </section>
+
+  <!-- Секция 2: Страница альбома -->
+  <section class="album-page" id="albumPage">
+    <button class="nav-arrow nav-arrow-left" id="navArrowBack" aria-label="Назад">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M19 12H5M12 19l-7-7 7-7"/>
+      </svg>
+    </button>
+
+    <div class="album-content">
+      <div class="album-cover">
+        <img src="trojkat warszawski/Okładka - Geniusz Piotr Dudek.jpg" alt="Trójkąt Warszawski">
+      </div>
+      <div class="album-info">
+        <h1 class="album-title">Trójkąt Warszawski<br><span class="album-subtitle">(Варшавский треугольник) 2014</span></h1>
+        <p class="album-description">
+          Второй мини-альбом польского рэпера Taco Hemingway, вышедший 19 декабря 2014 года. Концептуальный альбом: главный герой следит за бывшей девушкой и её новым парнем по имени Пётр. Записывался в 2013–2014 годах в Варшаве, продюсеры — Rumak, Augustyn и Bebun. Получил золотую сертификацию (свыше 15 000 копий) и был номинирован на Popkillery в категории «Альбом десятилетия».
+        </p>
+        <div class="track-list">
+          <a href="#track-szlugi-i-kalafiory" class="track-link">Szlugi i Kalafiory</a>
+          <a href="#track-marsz-marsz" class="track-link">Marsz, Marsz</a>
+          <a href="#track-wszystko-jedno" class="track-link">Wszystko Jedno</a>
+          <a href="#track-trojkat" class="track-link">Trojkat</a>
+          <a href="#track-przerywnik" class="track-link">(Przerywnik)</a>
+          <a href="#track-mieso" class="track-link">Mieso</a>
+          <a href="#track-900729" class="track-link">900729</a>
+        </div>
+      </div>
+    </div>
+
+    <button class="nav-arrow nav-arrow-right" id="navArrowToTracks" aria-label="К трекам">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    </button>
+  </section>
+
+  <!-- Секция 3: Плеер и тексты -->
+  <section class="track-section" id="trackSection">
+    <button class="nav-arrow nav-arrow-left" id="navArrowBackToAlbum" aria-label="Назад к альбому">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M19 12H5M12 19l-7-7 7-7"/>
+      </svg>
+    </button>
+
+    <!-- Плеер -->
+    <div class="player-bar">
+      <div class="player-album-art">
+        <img src="trojkat warszawski/Okładka - Geniusz Piotr Dudek.jpg" alt="Обложка альбома">
+      </div>
+      <div class="player-controls">
+        <button class="player-btn play-pause" id="playPause" aria-label="Воспроизведение">
+          <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          <svg class="icon-pause hidden" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+        </button>
+        <div class="player-info">
+          <span class="track-title" id="playerTrackTitle">Szlugi i Kalafiory</span>
+          <span class="track-album" id="playerAlbumTitle">Trójkąt Warszawski</span>
+        </div>
+      </div>
+      <audio id="audio" preload="metadata">
+        <source src="trojkat%20warszawski/01%20-%20Taco%20Hemingway%20-%20Szlugi%20i%20Kalafiory%20-%202024%20Remaster.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+
+    <!-- Контент: блок с курсивом + колонки + справочник -->
+    <div class="content-wrapper">
+      <div class="lyrics-columns">
+        <!-- Левая колонка: польский -->
+        <div class="lyrics-column">
+          <blockquote class="lyrics-note">
+            Przypis do utworu w booklecie płyty: Zwierzając się słuchaczowi, Główny Bohater lamentuje nad swoją sytuacją miłosną. Podejrzewa, że jego eks-dziewczyna zadaje się z niejakim Piotrem. Zapowiada śledztwo.
+          </blockquote>
+          <h3>Tekst po polsku</h3>
+          <div class="lyrics-text" id="lyricsPolish">
+            <p><em>[Intro]</em></p>
+            <p>Wieczorna Warszawa, taką właśnie lubimy ją oglądać. Szukamy ulic najlepiej oświetlonych, pełnych wielkomiejskiego ruchu i zgiełku. Warszawiacy lubią pogawędzić przy muzyczce i czarnej kawie. Ale przypatrzcie się uważnie, tu załatwia się także inne sprawy…</p>
+            <p><em>[Bridge]</em></p>
+            <p>W urzędach były koniaki, kobietom rozdawał kwiaty</p>
+            <p>To miasto pachnie jak szlugi i kalafiory</p>
+            <p>W urzędach były koniaki…</p>
+            <p>To miasto pachnie jak szlugi i kalafiory</p>
+            <p>…kobietom rozdawał kwiaty</p>
+            <p><em>[Refren]</em></p>
+            <p>To miasto pachnie jak szlugi i kalafiory</p>
+            <p>Dzieciaki krążą po mieście, by zgubić swoje upiory</p>
+            <p>To miasto pachnie jak mięso smażone w piekle</p>
+            <p>Czterdziestoletni przechodnie wciąż węszą i patrzą wściekle</p>
+            <p>To miasto pachnie jak szlugi i kalafiory</p>
+            <p>Dzieciaki tankują wódę, by upić swoje upiory</p>
+            <p>Panie władzo, ja tu tylko tańczę</p>
+            <p>Panie, panie, panie władzo, to są tylko tańce</p>
+            <p>Moje płuca znów dygoczą i wirują walcem</p>
+            <p>Mleko, miód w tej krainie, która zwykle płynie dymem i smalcem</p>
+            <p>Panie władzo, ooo, panie władzo</p>
+            <p><em>[Zwrotka]</em></p>
+            <p>Miasto betonu i pogubionych telefonów</p>
+            <p>Idę ścieżką usłaną szklanym szronem iPhone'ów</p>
+            <p>Znowu jej nie ma, więc kroczę do domu</p>
+            <p>Kroczę tu sam, więc wygadam się Tobie, bo w sumie nie wiem komu (nie wiem komu!)</p>
+            <p>Palę mentole fajki</p>
+            <p>Zieleń paczki tej podkreśla moje zielone najki</p>
+            <p>Wszystkie plotki zwykłem wkładać między pieprzone bajki</p>
+            <p>Ale teraz wiem już, czemu on ci daje te lajki</p>
+            <p>Słuchaczu, poznaj Piotra, mnie i mą eks</p>
+            <p>Piotrek to dla wielu kobiet jest łakomy kąsek</p>
+            <p>I mnie cała sytuacja wpędza w ostry kompleks</p>
+            <p>Jestem prawie pewien, że ten łotr uprawiał z nią…</p>
+            <p>I stąd tekst, śledzę ich tak od trzech</p>
+            <p>Może czterech tygodni, no i szkicuję konspekt</p>
+            <p>Co za pech, Piotrek ma też całe stado gąsek</p>
+            <p>Idź do Piotra i zapytaj „Monogamia?” – „No, thanks"</p>
+            <p><em>[Bridge]</em></p>
+            <p>W urzędach były koniaki, kobietom rozdawał kwiaty</p>
+            <p>To miasto pachnie jak szlugi i kalafiory</p>
+            <p>W urzędach były koniaki…</p>
+            <p>To miasto pachnie jak szlugi i kalafiory</p>
+            <p>…Kobietom rozdawał kwiaty</p>
+            <p><em>[Refren]</em></p>
+            <p>To miasto pachnie jak szlugi i kalafiory</p>
+            <p>Dzieciaki krążą po mieście, by zgubić swoje upiory</p>
+            <p>To miasto pachnie jak mięso smażone w piekle</p>
+            <p>Czterdziestoletni przechodnie wciąż węszą i patrzą wściekle</p>
+            <p>To miasto pachnie jak szlugi i kalafiory</p>
+            <p>Dzieciaki tankują wódę, by upić swoje upiory</p>
+            <p>Panie władzo, ja tu tylko tańczę</p>
+            <p>Panie panie panie władzo, to są tylko tańce</p>
+          </div>
+        </div>
+        <!-- Правая колонка: русский -->
+        <div class="lyrics-column">
+          <blockquote class="lyrics-note">
+            Примечание из буклета пластинки: Поверяя слушателю душу, Главный Герой сетует на свою любовную ситуацию. Подозревает, что бывшая девушка встречается с неким Петром. Анонсирует расследование.
+          </blockquote>
+          <h3>Текст на русском</h3>
+          <div class="lyrics-text" id="lyricsRussian">
+            <p><em>[Интро]</em></p>
+            <p>Вечерняя Варшава — именно такой мы любим её видеть. Ищем улицы получше освещённые, полные городского движения и шума. Варшавяне любят поболтать под музыку и чёрный кофе. Но присмотритесь — здесь решают и другие дела…</p>
+            <p><em>[Мост]</em></p>
+            <p>В учреждениях были коньяки, женщинам раздавал цветы</p>
+            <p>Этот город пахнет сигаретами и цветной капустой</p>
+            <p>В учреждениях были коньяки…</p>
+            <p>Этот город пахнет сигаретами и цветной капустой</p>
+            <p>…женщинам раздавал цветы</p>
+            <p><em>[Припев]</em></p>
+            <p>Этот город пахнет сигаретами и цветной капустой</p>
+            <p>Детишки кружат по городу, чтоб сбросить своих демонов</p>
+            <p>Этот город пахнет мясом, жарящимся в аду</p>
+            <p>Сорокалетние прохожие всё нюхают и смотрят зло</p>
+            <p>Этот город пахнет сигаретами и цветной капустой</p>
+            <p>Детишки глушат водку, чтоб напиться своих демонов</p>
+            <p>Господин начальник, я тут только танцую</p>
+            <p>Господин, господин, господин начальник, это просто танцы</p>
+            <p>Мои лёгкие снова дрожат и кружатся вальсом</p>
+            <p>Молоко, мёд в стране, что обычно течёт дымом и смальцем</p>
+            <p>Господин начальник, ооо, господин начальник</p>
+            <p><em>[Куплет]</em></p>
+            <p>Город бетона и растерянных телефонов</p>
+            <p>Иду тропой, усыпанной стеклянным инеем айфонов</p>
+            <p>Снова её нет, и шагаю домой</p>
+            <p>Шагаю тут один, выговорюсь тебе, а то не знаю кому (не знаю кому!)</p>
+            <p>Курю ментоловые сигареты</p>
+            <p>Зелень пачки подчёркивает мои зелёные кроссовки</p>
+            <p>Все слухи я обычно засовывал меж чёртовых сказок</p>
+            <p>Но теперь знаю, зачем он ставит тебе лайки</p>
+            <p>Слушатель, познакомься с Петром, мной и моей экс</p>
+            <p>Пётрик — для многих женщин лакомый кусок</p>
+            <p>Вся ситуация вгоняет меня в острый комплекс</p>
+            <p>Я почти уверен, что этот негодяй занимался с ней…</p>
+            <p>Отсюда и текст, слежу за ними уже третью</p>
+            <p>Может, четвёртую неделю, набрасываю конспект</p>
+            <p>Вот невезение, у Пётрика тоже целый выводок девок</p>
+            <p>Иди к Петру и спроси «Моногамия?» — «No, thanks»</p>
+            <p><em>[Мост]</em></p>
+            <p>В учреждениях были коньяки, женщинам раздавал цветы</p>
+            <p>Этот город пахнет сигаретами и цветной капустой</p>
+            <p>В учреждениях были коньяки…</p>
+            <p>Этот город пахнет сигаретами и цветной капустой</p>
+            <p>…Коробинам раздавал цветы</p>
+            <p><em>[Припев]</em></p>
+            <p>Этот город пахнет сигаретами и цветной капустой</p>
+            <p>Детишки кружат по городу, чтоб сбросить своих демонов</p>
+            <p>Этот город пахнет мясом, жарящимся в аду</p>
+            <p>Сорокалетние прохожие всё нюхают и смотрят зло</p>
+            <p>Этот город пахнет сигаретами и цветной капустой</p>
+            <p>Детишки глушат водку, чтоб напиться своих демонов</p>
+            <p>Господин начальник, я тут только танцую</p>
+            <p>Господин господин господин начальник, это просто танцы</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Справочная панель -->
+      <aside class="reference-panel" id="referencePanel">
+        <div class="reference-header">
+          <h4>Справка</h4>
+          <button class="close-reference" id="closeReference" aria-label="Закрыть">×</button>
+        </div>
+        <div class="reference-content" id="referenceContent">
+          <p class="reference-placeholder">Кликни на выделенное слово в тексте, чтобы увидеть справку.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>

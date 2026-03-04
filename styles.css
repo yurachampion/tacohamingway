@@ -4,32 +4,471 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bg-dark: #0d0d0f;
+  --bg-card: #16161a;
+  /* Trójkąt Warszawski: оранжевые акценты с обложки */
+  --accent: #e85d04;
+  --accent-dim: rgba(232, 93, 4, 0.15);
+  --text: #e4e4e7;
+  --text-muted: #a1a1aa;
+  --border: #27272a;
+}
+
 body {
-  font-family: system-ui, -apple-system, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background: #f5f5f5;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--bg-dark);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-header {
-  background: #2c3e50;
+/* Landing */
+.landing {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.landing.hidden {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateX(-100%);
+}
+
+.landing-content {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1100px;
+  margin-right: 5rem;
+}
+
+.rapper-photo img {
+  width: 360px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.landing-text {
+  max-width: 420px;
+}
+
+.landing-text h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.landing-text p {
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 0.8rem;
+}
+
+/* Круглые стрелки */
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  background: var(--accent-dim);
+  color: var(--accent);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.nav-arrow:hover {
+  background: var(--accent);
   color: white;
-  padding: 2rem;
-  text-align: center;
+  transform: translateY(-50%) scale(1.05);
 }
 
-main {
-  max-width: 800px;
-  margin: 2rem auto;
+.nav-arrow svg {
+  width: 28px;
+  height: 28px;
+}
+
+.nav-arrow-right {
+  right: 3rem;
+}
+
+.nav-arrow-left {
+  left: 3rem;
+}
+
+/* Страница альбома */
+.album-page {
+  min-height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
   padding: 2rem;
-  background: white;
+  position: relative;
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.album-page.visible {
+  display: flex;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.album-content {
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: 0 5rem;
+}
+
+.album-cover img {
+  width: 360px;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.album-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.album-title {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.album-subtitle {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.album-description {
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.track-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 3rem;
+}
+
+.track-link {
+  color: var(--accent);
+  text-decoration: none;
+  padding: 0.3rem 0;
+  transition: color 0.2s;
+}
+
+.track-link:hover {
+  color: var(--text);
+  text-decoration: underline;
+}
+
+/* Блок с курсивом перед текстом песни */
+.lyrics-note {
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: var(--bg-card);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+}
+
+/* Track section */
+.track-section {
+  position: relative;
+  min-height: 100vh;
+  padding: 2rem;
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.track-section.visible {
+  opacity: 1;
+  transform: translateX(0);
+  display: block;
+}
+
+.track-section {
+  display: none;
+}
+
+body.track-view .track-section {
+  display: block;
+}
+
+
+/* Плеер */
+.player-bar {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+  max-width: 100%;
+}
+
+.player-album-art img {
+  width: 56px;
+  height: 56px;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
 }
 
-code {
-  background: #f0f0f0;
-  padding: 0.2rem 0.4rem;
+.player-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.player-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.player-btn:hover {
+  background: #f48c06;
+  transform: scale(1.05);
+}
+
+.player-btn svg {
+  width: 22px;
+  height: 22px;
+}
+
+.icon-play.hidden,
+.icon-pause.hidden {
+  display: none;
+}
+
+.player-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.track-title {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.track-album {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Контент: колонки + справочник */
+.content-wrapper {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.lyrics-columns {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  min-width: 0;
+}
+
+.lyrics-column h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.lyrics-text {
+  font-size: 1rem;
+  line-height: 2;
+}
+
+.lyrics-text p {
+  margin-bottom: 0.5rem;
+}
+
+/* Ключевые слова — фон в прямоугольнике */
+.keyword {
+  background: var(--accent-dim);
+  color: var(--accent);
+  padding: 0.15em 0.4em;
   border-radius: 4px;
-  font-size: 0.9em;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.keyword:hover {
+  background: var(--accent);
+  color: white;
+}
+
+/* Справочная панель (как Genius) */
+.reference-panel {
+  width: 320px;
+  flex-shrink: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  max-height: 400px;
+  opacity: 0;
+  transform: translateX(20px);
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.reference-panel.open {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.reference-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.reference-header h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.close-reference {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.close-reference:hover {
+  color: var(--text);
+}
+
+.reference-content {
+  padding: 1.25rem;
+  overflow-y: auto;
+  max-height: 340px;
+}
+
+.reference-placeholder {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.reference-content h5 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+
+.reference-content p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* Адаптив */
+@media (max-width: 900px) {
+  .landing-content,
+  .album-content {
+    flex-direction: column;
+    margin-right: 0;
+    margin: 0;
+  }
+
+  .rapper-photo img {
+    width: 280px;
+    height: 350px;
+  }
+
+  .album-cover img {
+    width: 280px;
+    height: 280px;
+  }
+
+  .track-list {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-arrow-right {
+    right: 1.5rem;
+  }
+
+  .nav-arrow-left {
+    left: 1.5rem;
+  }
+
+  .lyrics-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .content-wrapper {
+    flex-direction: column;
+  }
+
+  .reference-panel {
+    width: 100%;
+    max-height: 300px;
+  }
 }
