@@ -119,6 +119,7 @@ body {
 .album-page {
   min-height: 100vh;
   display: none;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 2rem;
@@ -181,6 +182,23 @@ body {
   gap: 0.5rem 3rem;
 }
 
+/* Порядок: сначала столбец 1–4, потом столбец 5–7 */
+.track-list-by-column {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+.track-list-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.track-num {
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-right: 0.35rem;
+}
+
 .track-link {
   color: var(--accent);
   text-decoration: none;
@@ -193,17 +211,123 @@ body {
   text-decoration: underline;
 }
 
-/* Блок с курсивом перед текстом песни */
+/* Футер на странице альбома */
+.site-footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+.site-footer p {
+  margin: 0;
+}
+
+/* Блок с курсивом перед текстом песни — размер как у текста трека */
 .lyrics-note {
   font-style: italic;
   color: var(--text-muted);
-  font-size: 0.9rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  line-height: 2;
+  margin: 0;
   padding: 1rem 1.25rem;
   background: var(--bg-card);
   border-left: 3px solid var(--accent);
   border-radius: 0 8px 8px 0;
+}
+
+/* Два блока примечаний: польский и русский */
+.notes-block {
+  margin-bottom: 1.5rem;
+}
+.note-block {
+  margin-bottom: 1rem;
+}
+.note-block:last-child {
+  margin-bottom: 0;
+}
+.note-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.35rem;
+}
+.note-block .lyrics-note {
+  margin-bottom: 0;
+}
+
+/* Смысловые части текста — отступ между куплетом, бриджем и т.д. */
+.lyrics-part {
+  margin-top: 1.5rem;
+}
+.lyrics-part:first-child {
+  margin-top: 0;
+}
+
+/* Переключатель режима: только PL / только RU / оба */
+.view-toggles {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+.view-toggle {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-muted);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.view-toggle:hover {
+  color: var(--text);
+  border-color: var(--text-muted);
+}
+.view-toggle.active {
+  background: var(--accent-dim);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+body.view-pol .note-ru,
+body.view-ru .note-pl {
+  display: none;
+}
+body.view-pol .lyrics-column-ru,
+body.view-ru .lyrics-column-pl {
+  display: none;
+}
+body.view-pol .lyrics-line-ru,
+body.view-ru .lyrics-line-pl {
+  display: none;
+}
+body.view-pol .lyrics-columns,
+body.view-ru .lyrics-columns {
+  grid-template-columns: 1fr;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+body.view-pol .lyrics-line-pair,
+body.view-ru .lyrics-line-pair {
+  grid-template-columns: 1fr;
+}
+body.view-pol .lyrics-paired-headers,
+body.view-ru .lyrics-paired-headers {
+  grid-template-columns: 1fr;
+}
+body.view-pol .lyrics-line-pl {
+  border-right: none;
+  padding-right: 0;
+  margin-right: 0;
+}
+body.view-ru .lyrics-line-ru {
+  padding-left: 0;
 }
 
 /* Track section */
@@ -223,6 +347,128 @@ body {
 }
 
 .track-section {
+  padding-bottom: 2rem;
+}
+
+.track-content-main {
+  max-width: 100%;
+  padding-top: 0.25rem;
+}
+
+.lyrics-main {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Верхняя панель: на всю ширину секции, липкая при прокрутке */
+.track-top-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 1rem;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: calc(100% + 4rem);
+  margin-left: -2rem;
+  margin-right: -2rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
+  min-height: 52px;
+}
+
+/* Блок обложки + кликабельное название альбома */
+.player-album-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  flex-shrink: 0;
+  justify-content: center;
+}
+.player-album-block .track-album-link {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.player-album-block .track-album-link:hover {
+  color: var(--accent);
+}
+
+/* Плеер и стрелки одного размера по высоте, в одном стиле */
+.player-bar-inline {
+  flex: 1;
+  min-width: 0;
+  margin-bottom: 0;
+  padding: 0.2rem 0;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.player-bar-inline .player-album-art img {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+}
+.player-bar-inline .player-info {
+  display: none;
+}
+.player-bar-inline .player-controls {
+  flex: 1;
+  min-width: 0;
+}
+
+.track-top-bar .track-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+  min-height: 52px;
+}
+.track-top-bar .track-nav .nav-arrow {
+  position: static;
+  transform: none;
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--accent);
+  background: var(--accent-dim);
+  color: var(--accent);
+  border-radius: 50%;
+}
+.track-top-bar .track-nav .nav-arrow svg {
+  width: 22px;
+  height: 22px;
+}
+.track-top-bar .track-nav .nav-arrow:hover {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+  transform: scale(1.05);
+}
+
+.track-page-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.track-section {
   display: none;
 }
 
@@ -236,6 +482,7 @@ body.track-view .track-section {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  position: relative;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 12px;
@@ -291,6 +538,7 @@ body.track-view .track-section {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
+  align-items: flex-start;
 }
 
 .track-title {
@@ -298,9 +546,70 @@ body.track-view .track-section {
   font-size: 1rem;
 }
 
-.track-album {
-  font-size: 0.85rem;
+.album-button {
+  margin-top: 0.15rem;
+  padding: 0;
+  border: none;
+  background: transparent;
   color: var(--text-muted);
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+}
+
+.album-button:hover {
+  color: var(--accent);
+}
+
+.album-button-caret {
+  font-size: 0.7rem;
+}
+
+/* Выпадающее окно альбома в плеере */
+.album-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 1.5rem;
+  margin-top: 0.75rem;
+  width: 220px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: translateY(4px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 20;
+}
+
+.album-dropdown.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.album-dropdown-header {
+  padding: 0.75rem 0.9rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.album-dropdown-tracks {
+  padding: 0.4rem 0.9rem 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.album-dropdown .track-link {
+  font-size: 0.9rem;
+  padding: 0.25rem 0;
 }
 
 /* Контент: колонки + справочник */
@@ -316,6 +625,62 @@ body.track-view .track-section {
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   min-width: 0;
+}
+
+/* Парные строки: польский и русский друг напротив друга, строка в строку */
+.lyrics-paired {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 0;
+}
+.lyrics-paired-headers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+.lyrics-paired-headers h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.lyrics-line-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+  min-width: 0;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.lyrics-line-pair:last-child {
+  border-bottom: none;
+}
+/* На десктопе: левая колонка — польский, правая — русский, тонкий разделитель */
+.lyrics-line-pl {
+  padding-right: 1rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  margin-right: -1px;
+}
+.lyrics-line-ru {
+  padding-left: 1rem;
+}
+.lyrics-line-pl,
+.lyrics-line-ru {
+  min-width: 0;
+}
+.lyrics-line-pl p,
+.lyrics-line-ru p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+.lyrics-line-pair p + p {
+  margin-top: 0.5rem;
 }
 
 .lyrics-column h3 {
@@ -351,15 +716,20 @@ body.track-view .track-section {
   color: white;
 }
 
-/* Справочная панель (как Genius) */
+/* Справочная панель (как Genius) — липкая, с отступом от верха, увеличенный размер */
+/* Справка: top и max-height задаются в JS по высоте хедера (fallback — до выполнения скрипта) */
 .reference-panel {
-  width: 320px;
+  width: 400px;
   flex-shrink: 0;
+  align-self: flex-start;
+  position: sticky;
+  top: 6rem;
+  max-height: calc(100vh - 7rem);
+  z-index: 50;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 12px;
   overflow: hidden;
-  max-height: 400px;
   opacity: 0;
   transform: translateX(20px);
   pointer-events: none;
@@ -387,6 +757,12 @@ body.track-view .track-section {
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
+.reference-header h4.reference-phrase {
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--accent);
+  font-size: 1.1rem;
+}
 
 .close-reference {
   width: 28px;
@@ -408,7 +784,7 @@ body.track-view .track-section {
 .reference-content {
   padding: 1.25rem;
   overflow-y: auto;
-  max-height: 340px;
+  max-height: 420px;
 }
 
 .reference-placeholder {
@@ -426,6 +802,108 @@ body.track-view .track-section {
   font-size: 0.9rem;
   line-height: 1.6;
   color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+.reference-content p:last-child {
+  margin-bottom: 0;
+}
+.reference-quote {
+  border-left: 4px solid var(--accent);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  font-style: italic;
+}
+.reference-content .reference-quote + .reference-video,
+.reference-content p + .reference-video {
+  margin-top: 1rem;
+}
+
+.reference-video {
+  margin-top: 1rem;
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.reference-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.reference-video-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+.reference-video-link:hover {
+  text-decoration: underline;
+}
+
+.track-album-link {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  margin-top: 0.15rem;
+}
+
+.track-album-link:hover {
+  color: var(--accent);
+}
+
+.track-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+/* Фиксированные кнопки навигации — всегда в зоне видимости */
+.nav-arrow-fixed {
+  position: fixed;
+  left: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+}
+.nav-arrow-fixed:hover {
+  transform: translateY(-50%) scale(1.05);
+}
+.track-nav-fixed {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 0;
+  padding: 0.5rem 1rem;
+  gap: 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  z-index: 100;
+}
+.track-nav-fixed .nav-arrow {
+  position: static;
+  transform: none;
+}
+.track-nav-fixed .nav-arrow:hover {
+  transform: scale(1.05);
+}
+
+.lyrics-placeholder {
+  color: var(--text-muted);
+  font-style: italic;
 }
 
 /* Адаптив */
@@ -463,6 +941,39 @@ body.track-view .track-section {
     grid-template-columns: 1fr;
   }
 
+  .lyrics-line-pair,
+  .lyrics-paired-headers {
+    grid-template-columns: 1fr;
+  }
+
+  /* На мобильном: пара = один блок, польская строка сразу над русской, визуально одна группа */
+  .lyrics-line-pair {
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    padding: 0.6rem 0.75rem;
+    margin-bottom: 0.5rem;
+    border-bottom: none;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  .lyrics-line-pair:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  /* В паре: сверху польский, снизу русский (порядок в DOM), разделитель между ними */
+  .lyrics-line-pair .lyrics-line-pl {
+    padding-right: 0;
+    padding-bottom: 0.35rem;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    margin-right: 0;
+  }
+  .lyrics-line-pair .lyrics-line-ru {
+    padding-left: 0;
+    padding-top: 0.35rem;
+    color: var(--text-muted);
+    font-size: 0.95em;
+  }
+
   .content-wrapper {
     flex-direction: column;
   }
@@ -470,5 +981,101 @@ body.track-view .track-section {
   .reference-panel {
     width: 100%;
     max-height: 300px;
+  }
+
+  /* Мобильный хедер: плеер и стрелки в одну линию, компактно */
+  .track-section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1.5rem;
+  }
+  .track-top-bar {
+    flex-wrap: nowrap;
+    padding: 0.4rem 0.75rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    width: calc(100% + 2rem);
+    gap: 0.5rem;
+    min-height: 48px;
+  }
+  .player-bar-inline {
+    flex: 1;
+    min-width: 0;
+    min-height: 48px;
+    padding: 0;
+    gap: 0.5rem;
+  }
+  .player-bar-inline .player-album-art img {
+    width: 36px;
+    height: 36px;
+  }
+  .player-bar-inline .player-controls audio {
+    min-width: 0;
+  }
+  .track-top-bar .track-nav {
+    flex-shrink: 0;
+    gap: 0.35rem;
+    min-height: 48px;
+  }
+  .track-top-bar .track-nav .nav-arrow {
+    width: 38px;
+    height: 38px;
+  }
+  .track-top-bar .track-nav .nav-arrow svg {
+    width: 18px;
+    height: 18px;
+  }
+  .track-page-title {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Очень узкий экран: ещё компактнее */
+@media (max-width: 480px) {
+  .track-top-bar {
+    padding: 0.35rem 0.5rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+    width: calc(100% + 1.5rem);
+    min-height: 44px;
+  }
+  .player-bar-inline {
+    min-height: 44px;
+  }
+  .player-bar-inline .player-album-art img {
+    width: 32px;
+    height: 32px;
+  }
+  /* На очень узком экране название альбома под обложкой скрываем, чтобы влезло */
+  .player-bar-inline .track-album-link {
+    display: none;
+  }
+  .track-top-bar .track-nav {
+    min-height: 44px;
+  }
+  .track-top-bar .track-nav .nav-arrow {
+    width: 34px;
+    height: 34px;
+  }
+  .track-top-bar .track-nav .nav-arrow svg {
+    width: 16px;
+    height: 16px;
+  }
+  .track-section {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  .view-toggles {
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+  .view-toggle {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.8rem;
   }
 }

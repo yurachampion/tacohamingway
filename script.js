@@ -1,8 +1,41 @@
-// Данные справочника (по data-key)
+// Данные справочника (по data-key) — ссылки на сноски из PDF
 const references = {
-  1: { title: 'Warszawa / Варшава', text: 'Столица Польши. В треке отсылка к культуре, уличной жизни и городу.' },
-  2: { title: 'Bit', text: 'В рэпе — часть инструментала. Также может означать удар, схватку.' },
-  3: { title: 'Flow', text: 'Манера исполнения рэпа: ритм, интонация, паузы.' }
+  0: {
+    title: 'Szlugi',
+    text: 'Сленговое слово для сигарет/окурков. Даёт ощущение подъездного, уличного запаха, в отличие от нейтральных «papierosy».'
+  },
+  1: {
+    title: 'Dokument o prostytucji w PRL',
+    text: 'Фрагмент из документального фильма о проституции в ПНР. Создаёт документальный, мрачный фон варшавской ночи.'
+  },
+  2: {
+    title: 'Czesław Śliwa — oszust z PRL',
+    text: 'Сэмпл — рассказ жены Чеслава Шливы, легендарного мошенника времён ПНР. Она говорит о нём без злобы, всё ещё им восхищаясь.'
+  },
+  3: {
+    title: 'Szlugi i kalafiory — zapach klatki',
+    text: 'По словам Taco: «Smród kalafiora i papierosów to zapach polskiej klatki schodowej». Калафьор и сигареты как грустный, очень польский запах.'
+  },
+  4: {
+    title: 'Miasto pachnie szlugami i kalafiorami',
+    text: 'Для героя весь город пахнет так же, как его подъезд — смесью сигарет и цветной капусты. Образ сломанного сердца, когда весь мир пахнет так же несвежо.'
+  },
+  5: {
+    title: '„Panie władzo”',
+    text: 'Буквально «господин власть» — вежливое, но чуть язвительное обращение к людям при власти: полицейским, чиновникам, бюрократам.'
+  },
+  6: {
+    title: 'Kraina mlekiem i miodem płynąca',
+    text: 'Отсылка к библейскому «земля, где течёт молоко и мёд» — образ Земли Обетованной. Здесь контрастирует с реальностью, полной дыма и смальца.'
+  },
+  7: {
+    title: 'Wygadam się Tobie',
+    text: 'Герой будто ломает «четвёртую стену» и обращается прямо к слушателю, выговариваясь ему, потому что «не знает, кому ещё».'
+  },
+  8: {
+    title: 'Kim jest Piotr?',
+    text: 'По словам Taco, Piotr — собирательный образ человека, в которого влюбилась наша несбывшаяся любовь. Символ комплекса героя, а не конкретный враг.'
+  }
 };
 
 // Треки альбома
@@ -24,12 +57,17 @@ const navArrowRight = document.getElementById('navArrowRight');
 const navArrowBack = document.getElementById('navArrowBack');
 const navArrowToTracks = document.getElementById('navArrowToTracks');
 const navArrowBackToAlbum = document.getElementById('navArrowBackToAlbum');
+const albumButton = document.getElementById('albumButton');
+const albumDropdown = document.getElementById('albumDropdown');
 
 function showSection(section) {
   landing.classList.remove('hidden');
   albumPage.classList.remove('visible');
   trackSection.classList.remove('visible');
   document.body.classList.remove('track-view');
+  if (albumDropdown) {
+    albumDropdown.classList.remove('open');
+  }
   if (section === 'landing') {
     landing.classList.remove('hidden');
   } else if (section === 'album') {
@@ -46,6 +84,14 @@ navArrowRight.addEventListener('click', () => showSection('album'));
 navArrowBack.addEventListener('click', () => showSection('landing'));
 navArrowToTracks.addEventListener('click', () => showSection('track'));
 navArrowBackToAlbum.addEventListener('click', () => showSection('album'));
+
+// Выпадающее меню альбома из плеера
+if (albumButton && albumDropdown) {
+  albumButton.addEventListener('click', (e) => {
+    e.stopPropagation();
+    albumDropdown.classList.toggle('open');
+  });
+}
 
 // Клик по треку в списке
 document.querySelectorAll('.track-link').forEach(link => {
@@ -123,5 +169,8 @@ closeReference.addEventListener('click', () => {
 document.addEventListener('click', (e) => {
   if (referencePanel.classList.contains('open') && !referencePanel.contains(e.target) && !e.target.closest('.keyword')) {
     referencePanel.classList.remove('open');
+  }
+  if (albumDropdown && albumDropdown.classList.contains('open') && !albumDropdown.contains(e.target) && e.target !== albumButton) {
+    albumDropdown.classList.remove('open');
   }
 });

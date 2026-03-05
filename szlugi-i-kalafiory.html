@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Szlugi i Kalafiory — Разбор треков</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="view-both">
+  <section class="track-section visible" style="display: block;">
+    <header class="track-top-bar">
+      <div class="player-bar player-bar-inline">
+        <div class="player-album-block">
+          <div class="player-album-art">
+            <img src="trojkat warszawski/Okładka - Geniusz Piotr Dudek.jpg" alt="Обложка">
+          </div>
+          <a href="album.html" class="track-album-link">Trójkąt Warszawski</a>
+        </div>
+        <div class="player-controls">
+          <audio id="audio" preload="metadata" controls style="max-width: 100%; flex: 1;">
+            <source src="trojkat%20warszawski/01%20-%20Taco%20Hemingway%20-%20Szlugi%20i%20Kalafiory%20-%202024%20Remaster.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+      <nav class="track-nav" aria-label="Навигация по трекам">
+        <a href="album.html" class="nav-arrow nav-arrow-left" aria-label="Предыдущий трек">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        </a>
+        <a href="marsz-marsz.html" class="nav-arrow nav-arrow-right" aria-label="Следующий трек">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </nav>
+    </header>
+    <div class="track-content-main">
+    <h1 class="track-page-title">Szlugi i Kalafiory</h1>
+    <div class="content-wrapper" id="contentWrapper">
+      <div class="lyrics-main">
+        <div class="view-toggles" role="tablist" aria-label="Режим отображения текста">
+          <button type="button" class="view-toggle active" data-view="both" aria-pressed="true">Оба языка</button>
+          <button type="button" class="view-toggle" data-view="pol" aria-pressed="false">Только польский</button>
+          <button type="button" class="view-toggle" data-view="ru" aria-pressed="false">Только русский</button>
+        </div>
+
+        <div class="notes-block">
+          <div class="note-block note-pl">
+            <h4 class="note-label">Примечание (польский)</h4>
+            <blockquote class="lyrics-note">Przypis do utworu w booklecie płyty: Zwierzając się słuchaczowi, Główny Bohater lamentuje nad swoją sytuacją miłosną. Podejrzewa, że jego eks-dziewczyna zadaje się z niejakim Piotrem. Zapowiada śledztwo.</blockquote>
+          </div>
+          <div class="note-block note-ru">
+            <h4 class="note-label">Примечание (русский)</h4>
+            <blockquote class="lyrics-note">Примечание из буклета пластинки: Поверяя слушателю душу, Главный Герой сетует на свою любовную ситуацию. Подозревает, что бывшая девушка встречается с неким Петром. Анонсирует расследование.</blockquote>
+          </div>
+        </div>
+
+        <div class="lyrics-columns lyrics-paired" id="lyricsColumns">
+          <div class="lyrics-paired-headers">
+            <h3 class="lyrics-line-pl">Tekst po polsku</h3>
+            <h3 class="lyrics-line-ru">Текст на русском</h3>
+          </div>
+          <div class="lyrics-text" id="lyricsPolish">
+            <div class="lyrics-part">
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><em>[Intro]</em></p></div><div class="lyrics-line-ru"><p><em>[Интро]</em></p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="1">Wieczorna Warszawa, taką właśnie lubimy ją oglądać. Szukamy ulic najlepiej oświetlonych, pełnych wielkomiejskiego ruchu i zgiełku. Warszawiacy lubią pogawędzić przy muzyczce i czarnej kawie. Ale przypatrzcie się uważnie, tu załatwia się także inne sprawy…</span></p></div><div class="lyrics-line-ru"><p><span class="keyword" data-key="1">Вечерняя Варшава, на такую мы и любим смотреть. Ищем улицы поярче, чтобы светили как надо: шумные, живые, с большим городским гулом. Варшавяне любят потрепаться под музычку и чёрный кофе. Но присмотритесь внимательнее… тут решаются и другие дела…</span></p></div></div>
+            </div>
+            <div class="lyrics-part">
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><em>[Bridge]</em></p></div><div class="lyrics-line-ru"><p><em>[Бридж]</em></p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="2">W urzędach były koniaki, kobietom rozdawał kwiaty</span></p></div><div class="lyrics-line-ru"><p><span class="keyword" data-key="2">В кабинетах пил коньяк, а дамам раздавал цветы</span></p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>To miasto pachnie jak <span class="keyword" data-key="0">szlugi</span> i <span class="keyword" data-key="3">kalafiory</span></p></div><div class="lyrics-line-ru"><p>Этот город пахнет <span class="keyword" data-key="0">окурками</span> и <span class="keyword" data-key="3">цветной капустой</span></p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>W urzędach były koniaki…</p></div><div class="lyrics-line-ru"><p>В кабинетах был коньяк…</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>To miasto pachnie jak szlugi i kalafiory</p></div><div class="lyrics-line-ru"><p>Этот город пахнет, как сигареты и цветная капуста</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>…kobietom rozdawał kwiaty</p></div><div class="lyrics-line-ru"><p>…а дамам раздавал цветы</p></div></div>
+            </div>
+            <div class="lyrics-part">
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><em>[Refren]</em></p></div><div class="lyrics-line-ru"><p><em>[Припев]</em></p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>To miasto pachnie jak <span class="keyword" data-key="4">szlugi i kalafiory</span></p></div><div class="lyrics-line-ru"><p>Этот город пахнет <span class="keyword" data-key="4">окурками и цветной капустой</span></p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Dzieciaki krążą po mieście, by zgubić swoje upiory</p></div><div class="lyrics-line-ru"><p>Детишки кружат по району, чтоб стряхнуть своих призраков</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>To miasto pachnie jak mięso smażone w piekle</p></div><div class="lyrics-line-ru"><p>Этот город пахнет, как мясо, жареное в аду</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Czterdziestoletni przechodnie wciąż węszą i patrzą wściekle</p></div><div class="lyrics-line-ru"><p>Сорокалетние прохожие всё вынюхивают — и злобно смотрят, на ходу</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>To miasto pachnie jak szlugi i kalafiory</p></div><div class="lyrics-line-ru"><p>Этот город пахнет, как сигареты и цветная капуста</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Dzieciaki tankują wódę, by upić swoje upiory</p></div><div class="lyrics-line-ru"><p>Детишки заправляются водкой, чтоб утопить своих призраков</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Panie władzo, ja tu tylko tańczę</p></div><div class="lyrics-line-ru"><p>Господин начальник, я тут просто танцую</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Panie, panie, <span class="keyword" data-key="5">panie władzo</span>, to są tylko tańce</p></div><div class="lyrics-line-ru"><p>Господин, господин, <span class="keyword" data-key="5">господин начальник</span> — это просто танцы</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Moje płuca znów dygoczą i wirują walcem</p></div><div class="lyrics-line-ru"><p>Мои лёгкие снова дрожат — и кружат вальсом</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="6">Mleko, miód w tej krainie</span>, która zwykle płynie dymem i smalcem</p></div><div class="lyrics-line-ru"><p><span class="keyword" data-key="6">Молоко и мёд в этой земле</span>, что обычно течёт дымом и смальцем</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Panie władzo, ooo, panie władzo</p></div><div class="lyrics-line-ru"><p>Господин начальник… о-о-о, господин начальник…</p></div></div>
+            </div>
+            <div class="lyrics-part">
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><em>[Zwrotka]</em></p></div><div class="lyrics-line-ru"><p><em>[Куплет]</em></p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Miasto betonu i pogubionych telefonów</p></div><div class="lyrics-line-ru"><p>Город бетона и потерянных телефонов,</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Idę ścieżką usłaną szklanym szronem iPhone'ów</p></div><div class="lyrics-line-ru"><p>Иду по тропе, устланной стеклянным инеем айфонов.</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Znowu jej nie ma, więc kroczę do domu</p></div><div class="lyrics-line-ru"><p>Снова её нет — и я иду домой.</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Kroczę tu sam, więc <span class="keyword" data-key="7">wygadam się Tobie</span>, bo w sumie nie wiem komu (nie wiem komu!)</p></div><div class="lyrics-line-ru"><p>Иду один, так что <span class="keyword" data-key="7">выговорюсь тебе</span>, потому что, если честно, не знаю, кому. (Не знаю, кому!)</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Palę mentole fajki</p></div><div class="lyrics-line-ru"><p>Курю ментоловые сигареты.</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Zieleń paczki tej podkreśla moje zielone najki</p></div><div class="lyrics-line-ru"><p>Зелёная пачка подчёркивает мои зелёные найки.</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Wszystkie plotki zwykłem wkładać między pieprzone bajki</p></div><div class="lyrics-line-ru"><p>Сплетни я обычно считаю за чёртовы россказни,</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Ale teraz wiem już, czemu on ci daje te lajki</p></div><div class="lyrics-line-ru"><p>Но теперь-то я знаю, почему он ставит тебе эти лайки.</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Słuchaczu, <span class="keyword" data-key="8">poznaj Piotra</span>, mnie i mą eks</p></div><div class="lyrics-line-ru"><p>Слушатель, знакомься: <span class="keyword" data-key="8">Пётр</span>, я и моя бывшая.</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Piotrek to dla wielu kobiet jest łakomy kąsek</p></div><div class="lyrics-line-ru"><p>Пётрек для многих женщин — лакомый кусочек.</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>I mnie cała sytuacja wpędza w ostry kompleks</p></div><div class="lyrics-line-ru"><p>А меня вся эта история загоняет в жёсткий комплекс:</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Jestem prawie pewien, że ten łotr uprawiał z nią…</p></div><div class="lyrics-line-ru"><p>Я почти уверен, что у них уже был…</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>I stąd tekst, śledzę ich tak od trzech</p></div><div class="lyrics-line-ru"><p>Отсюда и текст: слежу за ними уже три</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Może czterech tygodni, no i szkicuję konspekt</p></div><div class="lyrics-line-ru"><p>Ну, может, четыре недели, и набрасываю конспект.</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Co za pech, Piotrek ma też całe stado gąsek</p></div><div class="lyrics-line-ru"><p>Вот невезуха: у Пётрка ещё целое стадо «гусынь».</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Idź do Piotra i zapytaj „Monogamia?” – „No, thanks”</p></div><div class="lyrics-line-ru"><p>Подойди к Пётру и спроси: «Моногамия?» — «No, thanks».</p></div></div>
+            </div>
+            <div class="lyrics-part">
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><em>[Bridge]</em></p></div><div class="lyrics-line-ru"><p><em>[Бридж]</em></p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>W urzędach były koniaki, kobietom rozdawał kwiaty</p></div><div class="lyrics-line-ru"><p>В кабинетах был коньяк, а дамам раздавал цветы</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>To miasto pachnie jak szlugi i kalafiory</p></div><div class="lyrics-line-ru"><p>Этот город пахнет окурками и цветной капустой</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>W urzędach były koniaki…</p></div><div class="lyrics-line-ru"><p>В кабинетах был коньяк…</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>To miasto pachnie jak szlugi i kalafiory</p></div><div class="lyrics-line-ru"><p>Этот город пахнет окурками и цветной капуста</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>…Kobietom rozdawał kwiaty</p></div><div class="lyrics-line-ru"><p>…а дамам раздавал цветы</p></div></div>
+            </div>
+            <div class="lyrics-part">
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><em>[Refren]</em></p></div><div class="lyrics-line-ru"><p><em>[Припев]</em></p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>To miasto pachnie jak szlugi i kalafiory</p></div><div class="lyrics-line-ru"><p>Этот город пахнет окурками и цветной капустой</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Dzieciaki krążą po mieście, by zgubić swoje upiory</p></div><div class="lyrics-line-ru"><p>Детишки кружат по району, чтоб стряхнуть своих призраков</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>To miasto pachnie jak mięso smażone w piekle</p></div><div class="lyrics-line-ru"><p>Этот город пахнет, как мясо, жареное в аду</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Czterdziestoletni przechodnie wciąż węszą i patrzą wściekle</p></div><div class="lyrics-line-ru"><p>Сорокалетние прохожие всё вынюхивают — и злобно смотрят, на ходу</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>To miasto pachnie jak szlugi i kalafiory</p></div><div class="lyrics-line-ru"><p>Этот город пахнет, как сигареты и цветная капуста</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Dzieciaki tankują wódę, by upić swoje upiory</p></div><div class="lyrics-line-ru"><p>Детишки заправляются водкой, чтоб утопить своих призраков</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Panie władzo, ja tu tylko tańczę</p></div><div class="lyrics-line-ru"><p>Господин начальник, я тут просто танцую</p></div></div>
+              <div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Panie panie panie władzo, to są tylko tańce</p></div><div class="lyrics-line-ru"><p>Господин, господин, господин начальник — это просто танцы</p></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="reference-panel" id="referencePanel">
+        <div class="reference-header">
+          <h4 id="referenceTitle">Справка</h4>
+          <button class="close-reference" id="closeReference" aria-label="Закрыть">×</button>
+        </div>
+        <div class="reference-content" id="referenceContent">
+          <p class="reference-placeholder">Кликни на выделенное слово в тексте, чтобы увидеть справку.</p>
+        </div>
+      </aside>
+    </div>
+    </div>
+    <footer class="site-footer">
+      <p>Разбор треков Taco Hemingway · Trójkąt Warszawski · 2025</p>
+    </footer>
+  </section>
+
+  <script src="track.js"></script>
+</body>
+</html>
