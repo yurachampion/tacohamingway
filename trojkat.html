@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trojkat — Разбор треков</title>
+  <title>Треугольник — Разбор треков</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="view-both">
@@ -32,17 +32,198 @@
       </nav>
     </header>
     <div class="track-content-main">
-    <h1 class="track-page-title">Trojkat</h1>
-    <div class="content-wrapper">
-      <div class="lyrics-columns">
-        <div class="lyrics-column"><h3>Tekst po polsku</h3><p class="lyrics-placeholder">Текст в разработке.</p></div>
-        <div class="lyrics-column"><h3>Текст на русском</h3><p class="lyrics-placeholder">Текст в разработке.</p></div>
+    <h1 class="track-page-title">Trójkąt</h1>
+    <p class="track-subtitle">Треугольник</p>
+    <div class="content-wrapper" id="contentWrapper">
+      <div class="lyrics-main">
+        <div class="view-toggles" role="tablist" aria-label="Режим отображения текста">
+          <button type="button" class="view-toggle active" data-view="both" aria-pressed="true">Оба языка</button>
+          <button type="button" class="view-toggle" data-view="pol" aria-pressed="false">Только польский</button>
+          <button type="button" class="view-toggle" data-view="ru" aria-pressed="false">Только русский</button>
+        </div>
+        
+        <div class="notes-block">
+          <div class="note-block note-pl">
+            <h4 class="note-label">Примечание (польский)</h4>
+            <blockquote class="lyrics-note">Utwór opowiedziany z perspektywy Piotra, antybohatera historii, ma obalić mit tego mężczyzny. Nie jest on bowiem żadnym wyrachowanym amantem, lecz zwykłym młodzieńcem, który upija się, szlaja po mieście, skłócany z bramkarzami, policją i grawitacją. Udaje mu się jednak poderwać kolejną dziewczynę. Gdy spacerują, pewna postać bacznie obserwuje ich spode łba.</blockquote>
+          </div>
+          <div class="note-block note-ru">
+            <h4 class="note-label">Примечание (русский)</h4>
+            <blockquote class="lyrics-note"></blockquote>
+          </div>
+        </div>
+        <div class="lyrics-columns lyrics-paired" id="lyricsColumns">
+          <div class="lyrics-paired-headers">
+            <h3 class="lyrics-line-pl">Tekst po polsku</h3>
+            <h3 class="lyrics-line-ru">Текст на русском</h3>
+          </div>
+          <div class="lyrics-text" id="lyricsPolish"><div class="lyrics-part">
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><em>[Intro]</em></p></div><div class="lyrics-line-ru"><p><em>[Интро]</em></p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="1">Najciekawsze może w tej mojej całej aferze to jest świat gastronomiczny. Kelnerzy, szefowie, bogowie nocy i dnia, (wielcy hehe),  wielcy i mali, w barze i w koktajl-barze, w barku i za kulisami</span></p></div><div class="lyrics-line-ru"><p><span class="keyword" data-key="1">Самое любопытное во всей этой моей истории, пожалуй, гастрономический мир. Официанты, шефы, боги ночи и дня (великие, хе-хе), большие и маленькие, в баре и коктейль-баре, у стойки и за кулисами.</span></p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p></p></div><div class="lyrics-line-ru"><p></p></div></div>
+</div>
+<div class="lyrics-part">
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><em>[Zwrotka 1]</em></p></div><div class="lyrics-line-ru"><p><em>[Куплет]</em></p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="2">Najpierw znika poczucie rytmu</span></p></div><div class="lyrics-line-ru"><p>Сначала пропадает чувство ритма,</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="3">Ale myślę: „Cóż. Może będzie jakiś zysk tu”</span></p></div><div class="lyrics-line-ru"><p>но думаю: &quot;Ну ладно. Может, тут будет какая-то выгода&quot;.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="4">Potem myślę: „Chrystus, dlaczego muszę być tu”</span></p></div><div class="lyrics-line-ru"><p>Потом думаю: &quot;Господи, зачем я вообще здесь&quot;.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="5">Ale trzecia tequila zabija poczucie wstydu</span></p></div><div class="lyrics-line-ru"><p>А третья текила убивает чувство стыда.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Wszystkim parkiet zbrzydł już, ja nie muszę kryć już</p></div><div class="lyrics-line-ru"><p>Всем уже осточертел танцпол, а мне и скрывать не надо,</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Że alkohol tańczy ze mną walczyk po walczyku</p></div><div class="lyrics-line-ru"><p>что алкоголь танцует со мной вальс за вальсом.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="6">Najpierw tańczy tango, potem coś inspirowane sambą</span></p></div><div class="lyrics-line-ru"><p>Сначала танго, потом что-то по мотивам самбы,</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="7">Wiruję w dół Karową, by wrócić na górę Tamką</span></p></div><div class="lyrics-line-ru"><p>я кружу вниз по Каровой, чтобы подняться обратно по Тамковой.*1</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Przyglądam się nastolatkom, kiedyś wychodziły rzadko</p></div><div class="lyrics-line-ru"><p>Смотрю на подростков, раньше они выходили редко,</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Teraz wpadły w miasta bagno i kłamią wciąż swoim matkom</p></div><div class="lyrics-line-ru"><p>а теперь городское болото засосало их, и они врут своим мамам.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Nagie nogi w szpilkach, ciekawe co na to tatko</p></div><div class="lyrics-line-ru"><p>Голые ноги на шпильках, интересно, что скажет на то папа.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="8">Przechodzę na czerwonym, będzie mandat</span>, kozacko</p></div><div class="lyrics-line-ru"><p>Перехожу на красный, будет штраф, кайф.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="9">Rano będzie słabo, teraz sram na to</span></p></div><div class="lyrics-line-ru"><p>Утром будет паршиво, сейчас мне плевать.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="10">Prawda jest taka, że nie wychodziłem tak dawno…</span></p></div><div class="lyrics-line-ru"><p>Правда в том, что я так давно не выходил...</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="11">Wracam na Krakowskie i upadam, już sam nie wiem na co</span></p></div><div class="lyrics-line-ru"><p>Возвращаюсь на Краковское и падаю, сам не знаю на что.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="12">Słyszę tylko śmiech tych dziewczyn głupich i grubych jak Grzegorz Lato</span></p></div><div class="lyrics-line-ru"><p>Слышу только смех этих девиц, глупых и толстых, как Гжегож Лято.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p></p></div><div class="lyrics-line-ru"><p></p></div></div>
+</div>
+<div class="lyrics-part">
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><em>[Refren]</em></p></div><div class="lyrics-line-ru"><p><em>[Припев]</em></p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="13">A obok w Zakąskach za barem się pląsa Pan Roman i wtrąca w rozmowy się…</span></p></div><div class="lyrics-line-ru"><p>А рядом, в «Zakąsk», за баром пляшет пан Роман и влезает в чужие разговоры...</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="14">A obok w Kamieniach małżonków wciąż nie ma, więc całują słomiane wdowy się</span></p></div><div class="lyrics-line-ru"><p>А рядом, в «Kamienie», супругов все нет, и целуются соломенные вдовы*.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>A obok, tam w Bistro, miłości na szybko się wiążą i milkną, gdy nowy dzień</p></div><div class="lyrics-line-ru"><p>А рядом, в «Bistro», любовь быстро закруичвается и стихает, когда приходит новый день.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Trójkąt warszawski, trójkąt warszawski</p></div><div class="lyrics-line-ru"><p>Варшавский треугольник, варшавский треугольник.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p></p></div><div class="lyrics-line-ru"><p></p></div></div>
+</div>
+<div class="lyrics-part">
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><em>[Zwrotka 2]</em></p></div><div class="lyrics-line-ru"><p><em>[Куплет]</em></p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="15">Dostać w pysk w Subway’u na Świętokrzyskiej</span></p></div><div class="lyrics-line-ru"><p>Получить в морду в Subway на Свентокшиской,</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="16">W Warszawie trzeba być atletą, to przede wszystkim</span></p></div><div class="lyrics-line-ru"><p>в Варшаве надо быть атлетом, прежде всего.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="17">Rozmowy z tym bramkarzem-kotletem spełzły na niczym</span></p></div><div class="lyrics-line-ru"><p>Разговоры с этим вышибалой-котлетой ни к чему не привели.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="18">Na Karową już nie wrócę dziś, co za policzek</span></p></div><div class="lyrics-line-ru"><p>На Карову я уже сегодня не вернусь, что за обида.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Wychodzę na ulicę i schodzę znów na Powiśle</p></div><div class="lyrics-line-ru"><p>Выхожу на улицу и снова спускаюсь на Повисле,</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>I brodzę po krętej drodze, telefon mi głośno piszczy</p></div><div class="lyrics-line-ru"><p>брожу по кривой дорожке, телефон противно пищит.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Cierpliwość tracę i zdrowie, bo znowu ta ruda pisze</p></div><div class="lyrics-line-ru"><p>Теряю терпение и здоровье, потому что эта рыжая снова пишет,</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>A kiedy znowu mnie dorwie, znów udam, że jej nie słyszę!</p></div><div class="lyrics-line-ru"><p>и когда снова меня заебет, я опять сделаю вид, что не слышу.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="19">Idę prosto przed siebie i mijam BUW</span></p></div><div class="lyrics-line-ru"><p>Иду прямо вперед, прохожу мимо BUW.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="20">Mój telefon na mnie krzyczy, ja widzę, że pisze znów</span></p></div><div class="lyrics-line-ru"><p>Телефон на меня орет, вижу, она снова пишет.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Chyba złapię taksówkę, wydałem już kilka stów</p></div><div class="lyrics-line-ru"><p>Наверное, поймаю такси, я уже спустил пару сотен,</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Z trzysta, wciąż idę dalej i czuję już Wisły brud</p></div><div class="lyrics-line-ru"><p>где-то триста, а я все иду дальше и уже чувствую грязь Вислы.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="21">Szlugi, mocz, wóda i pot, to dziwny smród</span></p></div><div class="lyrics-line-ru"><p>Сиги, моча, водка и пот, странная вонь.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>A po drugiej stronie Wisły grasuje już inny lud</p></div><div class="lyrics-line-ru"><p>А по ту сторону Вислы уже живет совсем другой народ.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Istny cud, my tu fit i jogurty i pitny miód</p></div><div class="lyrics-line-ru"><p>Прям чудо, мы тут фитнес, йогурты и питьевой мед,</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>A tam nikt nie oszukuje się wcale i tli się szlug</p></div><div class="lyrics-line-ru"><p>а там никто себя не обманывает, и гасит окурок.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Warszawa, rozdarta grubą kreską</p></div><div class="lyrics-line-ru"><p>Варшава, разорванная толстой линией.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Zamykam drzwi taksówki, proszę na Mazowiecką</p></div><div class="lyrics-line-ru"><p>Закрываю дверь такси, прошу на Мазовецкую.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Taksówkarz ględzi mi, że los ma kiepski</p></div><div class="lyrics-line-ru"><p>Таксист мне ноет, что жизнь у него хреновая,</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="22">Ale ja słyszę śmiech tych głupich i grubych jak Tomaszewski</span></p></div><div class="lyrics-line-ru"><p>а я слышу смех этих девиц, глупых и толстых, как Томашевский.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p></p></div><div class="lyrics-line-ru"><p></p></div></div>
+</div>
+<div class="lyrics-part">
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><em>[Refren]</em></p></div><div class="lyrics-line-ru"><p><em>[Припев]</em></p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>A obok w Zakąskach za barem się pląsa Pan Roman i wtrąca w rozmowy się…</p></div><div class="lyrics-line-ru"><p>А рядом, в «Zakąsk»i, за баром пляшет пан Роман и влезает в чужие разговоры...</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>A obok w Kamieniach małżonków wciąż nie ma, więc całują słomiane wdowy się</p></div><div class="lyrics-line-ru"><p>А рядом, в «Kamienie», супругов все нет, и целуются соломенные вдовы*.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>A obok, tam w Bistro, miłości na szybko się wiążą i milkną, gdy nowy dzień</p></div><div class="lyrics-line-ru"><p>А рядом, в «Bistro», любовь быстро закруичвается и стихает, когда приходит новый день.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Trójkąt warszawski, trójkąt warszawski</p></div><div class="lyrics-line-ru"><p>Варшавский треугольник, варшавский треугольник.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p></p></div><div class="lyrics-line-ru"><p></p></div></div>
+</div>
+<div class="lyrics-part">
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><em>[Zwrotka 3]</em></p></div><div class="lyrics-line-ru"><p><em>[Куплет]</em></p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="23">Trójkąt warszawski, trójkąt bermudzki</span></p></div><div class="lyrics-line-ru"><p>Варшавский треугольник, бермудский треугольник.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="24">Dziewczyny idą tyłem, a przed nimi idą sutki</span></p></div><div class="lyrics-line-ru"><p>Девчонки идут бедрами, а впереди у них идут сиськи.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Chłopcy zapominają o tym, że ich żywot krótki jest</p></div><div class="lyrics-line-ru"><p>Парни забывают, что жизнь у них короткая.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Ernest miał rację ha, zdejmuj rurki, wpierw</p></div><div class="lyrics-line-ru"><p>Эрнест был прав, ха, снимай сливки.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Napij się wódki, cztery złote od lufki</p></div><div class="lyrics-line-ru"><p>Выпей водки, четыре злотых за шот.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Nie dzwoń do przyjaciółki, nie pomoże ci już dziś</p></div><div class="lyrics-line-ru"><p>Не звони подружке, сегодня она тебе уже не поможет.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>To jest dorosłość, chciałaś jej od podstawówki, co?</p></div><div class="lyrics-line-ru"><p>Это и есть взрослость, ты хотела ее еще с начальной школы, да?</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Wolę Zozole, olej to i mnie puknij, no, chodź</p></div><div class="lyrics-line-ru"><p>Выбираю Zozole, забей, и трахни меня, ну, давай.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="25">Mieszka tuż obok, więc pójdę na Kredytową z nią</span></p></div><div class="lyrics-line-ru"><p>Она живет совсем рядом, пойду с ней на Кредитовую.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="26">Jakiś typ się na nas gapi, ma dość wrogi wzrok</span></p></div><div class="lyrics-line-ru"><p>Какой-то тип на нас пялится, взгляд у него недобрый.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="27">Chciałbym chwilę pomilczeć, ona ma słowotok</span></p></div><div class="lyrics-line-ru"><p>Я бы хотел помолчать минутку, а у нее словесный понос.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="28">Tamta dziewczyna ciągle pisze, Chryste, po co to?</span></p></div><div class="lyrics-line-ru"><p>Та девчонка все пишет, господи, зачем.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Jestem Piotr, ale mówią na mnie Łotr</p></div><div class="lyrics-line-ru"><p>Я Петр, но меня зовут негодяй.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Dosyć długo mam ten alias, ale nie wiem w sumie skąd</p></div><div class="lyrics-line-ru"><p>Этот псевдоним со мной давно, только сам не знаю почему.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Znajdziesz go wszędzie, gdzie zapach perfum i szlugów swąd</p></div><div class="lyrics-line-ru"><p>Найдешь меня там, где запах духов и гарь от сиг,</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="29">A w dziewczęcych sercach wciąż gasły światła i psuł się prąd</span></p></div><div class="lyrics-line-ru"><p>а в девичьих сердцах снова гаснет свет и выбивает пробки.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>(Fajnie, co?)</p></div><div class="lyrics-line-ru"><p>(Классно, да?)</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>To mój rozumowania tok, Do you wanna fuck?</p></div><div class="lyrics-line-ru"><p>Вот такая у меня логика, Do you wanna fuck?</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Nie mówię tego na głos, bo to zbyt radykalny krok</p></div><div class="lyrics-line-ru"><p>Я не говорю это вслух, слишком радикальный шаг.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="30">„Możesz wejść na chwilę, ale na nic nie licz”</span></p></div><div class="lyrics-line-ru"><p>&quot;Можешь зайти на минуту, но ни на что не рассчитывай&quot;.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="31">A ja zamierzam się zasiedzieć jak Michał Listkiewicz</span></p></div><div class="lyrics-line-ru"><p>А я собираюсь засесть у нее, как Михал Листкевич.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p></p></div><div class="lyrics-line-ru"><p></p></div></div>
+</div>
+<div class="lyrics-part">
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><em>[Bridge]</em></p></div><div class="lyrics-line-ru"><p><em>[Бридж]</em></p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="32">PZPN, PZPN, jebać, jebać PZPN</span></p></div><div class="lyrics-line-ru"><p>PZPN, PZPN, нахуй, нахуй PZPN</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>PZPN, PZPN, jebać, jebać PZPN</p></div><div class="lyrics-line-ru"><p>PZPN, PZPN, нахуй, нахуй PZPN</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>PZPN, PZPN, jebać, jebać PZPN</p></div><div class="lyrics-line-ru"><p>PZPN, PZPN, нахуй, нахуй PZPN</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>PZPN, PZPN, jebać, jebać PZPN</p></div><div class="lyrics-line-ru"><p>PZPN, PZPN, нахуй, нахуй PZPN</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p></p></div><div class="lyrics-line-ru"><p></p></div></div>
+</div>
+<div class="lyrics-part">
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><em>[Refren]</em></p></div><div class="lyrics-line-ru"><p><em>[Куплет]</em></p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>A obok w Zakąskach za barem się pląsa Pan Roman i wtrąca w rozmowy się…</p></div><div class="lyrics-line-ru"><p>А рядом, в «Zakąsk»i, за баром пляшет пан Роман и влезает в чужие разговоры...</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>A obok w Kamieniach małżonków wciąż nie ma, więc całują słomiane wdowy się</p></div><div class="lyrics-line-ru"><p>А рядом, в «Kamienie», супругов все нет, и целуются соломенные вдовы*.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>A obok, tam w Bistro, miłości na szybko się wiążą i milkną, gdy nowy dzień</p></div><div class="lyrics-line-ru"><p>А рядом, в «Bistro», любовь быстро закруичвается и стихает, когда приходит новый день.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Trójkąt warszawski, trójkąt warszawski</p></div><div class="lyrics-line-ru"><p>Варшавский треугольник, варшавский треугольник.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p></p></div><div class="lyrics-line-ru"><p></p></div></div>
+</div>
+<div class="lyrics-part">
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><em>[Outro]</em></p></div><div class="lyrics-line-ru"><p><em>[Outro]</em></p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="33">Inne stoliki nie były obsłużone, ja byłem obsłużony. Ja byłem obsłużony, dla mnie była każda wódka i każda potrawa, i każda muzyka w orkiestrze</span></p></div><div class="lyrics-line-ru"><p>Другие столики не обслужили, а меня обслужили. Меня обслужили. Для меня была любая водка и любое блюдо, и любая музыка в оркестре.</p></div></div>
+</div></div>
       </div>
-    </div>
+      </div>
+      <aside class="reference-panel" id="referencePanel">
+        <div class="reference-header">
+          <h4 id="referenceTitle">Справка</h4>
+          <button class="close-reference" id="closeReference" aria-label="Закрыть">×</button>
+        </div>
+        <div class="reference-content" id="referenceContent">
+          <p class="reference-placeholder">Кликни на выделенное слово в тексте, чтобы увидеть справку.</p>
+        </div>
+      </aside>
+    
     </div>
     <footer class="site-footer">
       <p>Разбор треков Taco Hemingway · Trójkąt Warszawski · 2025</p>
     </footer>
   </section>
+        <script>
+var referencesPl = {
+  1: { title: "Najciekawsze może w tej mojej całej aferze to jest świat gastronomiczny.", text: "Cytat pochodzi z filmu dokumentalnego o Czesławie Śliwie, pt. “Konsul” i inni z 1970 roku. Świetny wstęp do kawałka, w którym narrator odwiedza różne kluby i bary.", url: "", videoId: "ESXzSz2Z1W4" },
+  2: { title: "Najpierw znika poczucie rytmu", text: "Znikające poczucie rytmu u Piotra, to subiektywne wrażenie, że własne umiejętności taneczne, zwłaszcza w rytm muzyki, zostały osłabione, jako efekt upojenia alkoholowego.", url: "https://genius.com/10018250/Taco-hemingway-trojkat/Najpierw-znika-poczucie-rytmu" },
+  3: { title: "Ale myślę: „Cóż. Może będzie jakiś zysk tu”", text: "Piotr myśli, że nie wyjdzie sam z tej imprezy. Zyskiem określa kolejną poderwaną kobietę.", url: "https://genius.com/8355917/Taco-hemingway-trojkat/Ale-mysle-coz-moze-bedzie-jakis-zysk-tu" },
+  4: { title: "Potem myślę: „Chrystus, dlaczego muszę być tu”", text: "Prawdopodobnie jest to myślenie typowego introwertyka.", url: "https://genius.com/17034842/Taco-hemingway-trojkat/Potem-mysle-chrystus-dlaczego-musze-byc-tu" },
+  5: { title: "Ale trzecia tequila zabija poczucie wstydu", text: "Wraz ze spożyciem alko, spada poczucie wstydu co pozwala się “wyluzować”. Tequila – Wódka meksykańska, odmiana mezcalu, produkowana ze sfermentowanego soku specjalnego gatunku tzw. niebieskiej agawy", url: "https://genius.com/7614570/Taco-hemingway-trojkat/Ale-trzecia-tequila-zabija-poczucie-wstydu" },
+  6: { title: "Najpierw tańczy tango, potem coś inspirowane sambą", text: "Tango jest tańcem dostojnym, eleganckim, natomiast samba jest tańcem bardziej dynamicznym i szybszym. Można wnioskować, że po upływie czasu z alkoholem we krwi zachowanie bohatera jest bardziej lekkomyślne, radykalne, jak to bywa po spożywaniu alkoholu w znacznej ilości.", url: "https://genius.com/11323405/Taco-hemingway-trojkat/Najpierw-tanczy-tango-potem-cos-inspirowane-samba" },
+  7: { title: "Wiruję w dół Karową, by wrócić na górę Tamką", text: "Karowa i Tamka to dwie ulice na Skarpie Wiślanej, łączące Trakt Królewski z Powiślem. “Wiruję w dół” ze względu na kształt wiaduktu na Karowej w kształcie ślimaka.", url: "https://genius.com/8355868/Taco-hemingway-trojkat/Wiruje-w-do-karowa-by-wrocic-na-gore-tamka" },
+  8: { title: "Przechodzę na czerwonym, będzie mandat", text: "Zdaje się, że Piotr przyglądając się nastolatkom zagapił się i przeszedł na czerwonym świetle.", url: "https://genius.com/8939634/Taco-hemingway-trojkat/Przechodze-na-czerwonym-bedzie-mandat" },
+  9: { title: "Rano będzie słabo, teraz sram na to", text: "Kac to niezbyt przyjemny skutek upojnego picia alkoholu poprzedniego wieczoru.", url: "https://genius.com/10445045/Taco-hemingway-trojkat/Rano-bedzie-sabo-teraz-sram-na-to" },
+  10: { title: "Prawda jest taka, że nie wychodziłem tak dawno…", text: "Piotr nie wychodził tak dawno do klubu, że nie obchodzą go dalsze konsekwencje (mandat, kac).", url: "https://genius.com/17905751/Taco-hemingway-trojkat/Prawda-jest-taka-ze-nie-wychodziem-tak-dawno" },
+  11: { title: "Wracam na Krakowskie i upadam, już sam nie wiem na co", text: "Tak pijany, że nie interesuje go nawet w jaki sposób pada na ziemię.", url: "https://genius.com/10331179/Taco-hemingway-trojkat/Wracam-na-krakowskie-i-upadam-juz-sam-nie-wiem-na-co" },
+  12: { title: "Słyszę tylko śmiech tych dziewczyn głupich i grubych jak Grz…", text: "Grzegorz Lato jest to były polski piłkarz, który w latach 2008 – 2012 był prezesem PZPNu, czyli Polskiego Związku Piłki Nożnej. Porównanie dziewczyn do tego Pana, występuje ponieważ był on grubszym mężczyzną, a głupi dlatego, że nie był zbytnio lubiany przez fanów piłki nożnej, zresztą jak cały PZPN.", url: "https://genius.com/5135524/Taco-hemingway-trojkat/Sysze-tylko-smiech-tych-dziewczyn-gupich-i-grubych-jak-grzegorz-lato" },
+  13: { title: "A obok w Zakąskach za barem się pląsa Pan Roman i wtrąca w r…", text: "Chodzi tu o warszawską restaurację Przekąski Zakąski – jest to znany lokal, gdzie po prostu można się napić i w którym pracuje barman Pan Roman, lubiący zagadywać do klientów.", url: "https://genius.com/6387333/Taco-hemingway-trojkat/A-obok-w-zakaskach-za-barem-sie-plasa-pan-roman-i-wtraca-w-rozmowy-sie" },
+  14: { title: "A obok w Kamieniach małżonków wciąż nie ma, więc całują słom…", text: "Chodzi tu o Kamieniołomy – nie istniejący już warszawski klub, w podziemiach hotelu “Europejskiego”, przez wielu uznawany za legendarny. “Słomiana wdowa” to żona, której małżonek wyjechał dokądś na pewien czas.", url: "https://genius.com/6387340/Taco-hemingway-trojkat/A-obok-w-kamieniach-mazonkow-wciaz-nie-ma-wiec-cauja-somiane-wdowy-sie" },
+  15: { title: "Dostać w pysk w Subway’u na Świętokrzyskiej", text: "Taco wypowiedział się na ten temat w wywiadzie dla Radia Koszalin: https://youtu.be/PiBgnv7KWgU?t=5m31s (…)Ja tam dostałem dwukrotnie, raz bezpośrednio w lokalu, drugi raz trochę poza nim. To jest lokal 24h w takim bardzo newralgicznym miejscu (…) przy ulicy Mazowieckiej, która słynie z (…) wątpliwej reputacji klubów. (…) Wiesz, tam jest bardzo dużo mięsa, bardzo dużo sera, ludzie są głodni i pijani. (…) I tam się zdarzają złe rzeczy. (…) My dostaliśmy w twarz z kolegą Lucjanem, bo chcieliśmy pilnować miejsca w kolejce.", url: "https://genius.com/6923198/Taco-hemingway-trojkat/Dostac-w-pysk-w-subwayu-na-swietokrzyskiej" },
+  16: { title: "W Warszawie trzeba być atletą, to przede wszystkim", text: "Atleta w kontekście wysportowanej, szybko biegającej osoby. Nawiązanie do poprzedniego wersu, aby nie dostać w pysk w Warszawie trzeba być najzwyczajniej szybkim żeby uniknąć problemów.", url: "https://genius.com/10008984/Taco-hemingway-trojkat/W-warszawie-trzeba-byc-atleta-to-przede-wszystkim" },
+  17: { title: "Rozmowy z tym bramkarzem-kotletem spełzły na niczym", text: "Nawiązanie do wersu z piosenki Wszystko jedno: W tym kraju, w którym każdy chłopiec jest jak mielony kotlet\"", url: "https://genius.com/7797581/Taco-hemingway-trojkat/Rozmowy-z-tym-bramkarzem-kotletem-spezy-na-niczym" },
+  18: { title: "Na Karową już nie wrócę dziś, co za policzek", text: "Ulica Karowa – ulica biegnąca od Wybrzeża Kościuszkowskiego do Krakowskiego Przedmieścia w Warszawie. Między innymi znajduje się na niej klub Karowa 31, do którego prawdopodobnie nie został wpuszczony Piotr.", url: "https://genius.com/10445064/Taco-hemingway-trojkat/Na-karowa-juz-nie-wroce-dzis-co-za-policzek" },
+  19: { title: "Idę prosto przed siebie i mijam BUW", text: "BUW- Biblioteka Uniwersytecka w Warszawie", url: "https://genius.com/6721007/Taco-hemingway-trojkat/Ide-prosto-przed-siebie-i-mijam-buw" },
+  20: { title: "Mój telefon na mnie krzyczy, ja widzę, że pisze znów", text: "Zważywszy na personifikację telefonu, ten “krzyk” można zinterpretować dosyć szeroko: - Telefony są z nami wszędzie (często krzyczą i piszczą w tekstach na płycie Taco), nie potrafimy bez nich żyć, często na nich opierają się nasze więzi społeczne przez co nie trudno o poczucie osaczenia. - Telefon jest pośrednikiem w relacji porzuconej kochanki z bohaterem tej piosenki, ona przypomina o sobie, być może powodując u niego wyrzuty sumienia.", url: "https://genius.com/7142796/Taco-hemingway-trojkat/Moj-telefon-na-mnie-krzyczy-ja-widze-ze-pisze-znow" },
+  21: { title: "Szlugi, mocz, wóda i pot, to dziwny smród", text: "Nawiązanie do utworu “Szlugi i kalafiory”, który nawiązuje do typowych zapachów Warszawy, szczególnie tej nocnej.", url: "https://genius.com/11440831/Taco-hemingway-trojkat/Szlugi-mocz-woda-i-pot-to-dziwny-smrod" },
+  22: { title: "Ale ja słyszę śmiech tych głupich i grubych jak Tomaszewski", text: "Jan Tomaszewski to kolejny polski piłkarz oraz człowiek związany z PZPNem. Po wielu krytycznych słowach odnośnie tego stowarzyszenia, został On szefem komisji etyki PZPN.", url: "https://genius.com/5135548/Taco-hemingway-trojkat/Ale-ja-sysze-smiech-tych-gupich-i-grubych-jak-tomaszewski" },
+  23: { title: "Trójkąt warszawski, trójkąt bermudzki", text: "1.Na trójkącie bermudzkim dochodzi do wielu niewyjaśnionych zaginięć statków, jachtów bądź samolotów. W trójkącie warszawskim (kluby i klubokawiarnie) można spędzić wieczór w którym też się zgubisz urywając film. 2.Za komuny Trójkątem Bermudzkim w Warszawie nazywany był Trójkąt Hybrydy-bar Przechodni- przychodnia. Wspomina o nim Janusz Głowacki w swojej książce ‘z głowy’.", url: "https://genius.com/7254091/Taco-hemingway-trojkat/Trojkat-warszawski-trojkat-bermudzki" },
+  24: { title: "Dziewczyny idą tyłem, a przed nimi idą sutki", text: "Sama osoba dziewczyny zostaje zrzucona na drugi plan, bo wyeksponowane piersi skupiają całą uwagę. W efekcie można odnieść wrażenie, że najpierw idą sutki (piersi), a gdzieś za nimi dziewczyna.", url: "https://genius.com/7153434/Taco-hemingway-trojkat/Dziewczyny-ida-tyem-a-przed-nimi-ida-sutki" },
+  25: { title: "Mieszka tuż obok, więc pójdę na Kredytową z nią", text: "Ulica Kredytowa – ulica położona w Śródmieściu Północnym, która biegnie od zbiegu ul. Traugutta, ul. Mazowieckiej i pl. Małachowskiego na zachód bez przecznic do zbiegu ul. Jasnej i pl. Dąbrowskiego.", url: "https://genius.com/10445083/Taco-hemingway-trojkat/Mieszka-tuz-obok-wiec-pojde-na-kredytowa-z-nia" },
+  26: { title: "Jakiś typ się na nas gapi, ma dość wrogi wzrok", text: "Ta część tekstu łączy utwór “trójkąt” z utworem “(przerywnik)”, w którym Filip opowiada: Wracam na Mazowiecką, widzę jego chyba Tak to on. Tak to on. Tak, tak, to on. Ten warszawski łotr Twój lowelas, rusza się jak gruba ryba Z bratobójczo zagryzonym śledziem w gardle wóda pływa Stoi z jakąś inną dupą która wódę mu nabywa Idą w stronę Kredytowej, tam się trop urywa Jedna sytuacja opowiadana z dwóch perspektyw.", url: "https://genius.com/15199330/Taco-hemingway-trojkat/Jakis-typ-sie-na-nas-gapi-ma-dosc-wrogi-wzrok" },
+  27: { title: "Chciałbym chwilę pomilczeć, ona ma słowotok", text: "Piotr nie szuka stymulacji intelektualnej ani emocjonalnej, zależy mu wyłącznie na pustym towarzystwie i przygodnym seksie.", url: "https://genius.com/7142824/Taco-hemingway-trojkat/Chciabym-chwile-pomilczec-ona-ma-sowotok" },
+  28: { title: "Tamta dziewczyna ciągle pisze, Chryste, po co to?", text: "Może to się odnosić do „Rudej”, lub innej dziewczyny z którą on pisał dla rozrywki a one chciały czegoś więcej niż jedna noc i teraz do niego wypisują a on je ignoruje.", url: "https://genius.com/38065256/Taco-hemingway-trojkat/Tamta-dziewczyna-ciagle-pisze-chryste-po-co-to" },
+  29: { title: "A w dziewczęcych sercach wciąż gasły światła i psuł się prąd", text: "“Gasły światła” – czyli dziewczyny traciły wszelką nadzieję “Psuł się prąd” – coś co napawało je nadzieją przestało istnieć, w tym przypadku Piotr który uwodził dziewczyny a potem już więcej sie do nich nie odzywał", url: "https://genius.com/10863626/Taco-hemingway-trojkat/A-w-dziewczecych-sercach-wciaz-gasy-swiata-i-psu-sie-prad" },
+  30: { title: "„Możesz wejść na chwilę, ale na nic nie licz”", text: "Czyli nic innego, jak szybki sex bez zobowiązań.", url: "https://genius.com/10394656/Taco-hemingway-trojkat/Mozesz-wejsc-na-chwile-ale-na-nic-nie-licz" },
+  31: { title: "A ja zamierzam się zasiedzieć jak Michał Listkiewicz", text: "Michał Listkiewicz to kolejny prezes PZPNu. Zasiedział się On, ponieważ pełnił tę funkcję prawie dziesięć lat ( w latach 1999 – 2008)", url: "https://genius.com/5135566/Taco-hemingway-trojkat/A-ja-zamierzam-sie-zasiedziec-jak-micha-listkiewicz" },
+  32: { title: "PZPN, PZPN, jebać, jebać PZPN", text: "W utworze 900729 mamy widok na tę sytuację z perspektywy bohatera: Widziałem też jego, kroczył po mieście. Wyglądał obleśnie polując na niebo Leżał na glebie i śpiewał o PZPNie i miejscach połkniętych przez przeszłość — Mamy tutaj podsumowanie niechęci do PZPNu. Wykorzystane tutaj hasło było niegdyś dość popularne wśród kibiców piłki nożnej. https://www.youtube.com/watch?v=-GzBWsJlDmU — Ten jak i poprzednie “futbolowe” wstawki w utworze mają niejako uwypuklić małe rozgarnięcie intelektualne Piotra. W kontraście do “głównego bohatera” odwołującego się chociażby do Ernesta Hemingwaya, nie ma on obycia ani wiedzy wykraczającej poza piłkę nożną.", url: "https://genius.com/5135575/Taco-hemingway-trojkat/Pzpn-pzpn-jebac-jebac-pzpn" },
+  33: { title: "Inne stoliki nie były obsłużone, ja byłem obsłużony. Ja byłe…", text: "I kolejny cytat z filmu “Konsul i inni”, dokumentu o oszuście Czesławie Śliwie: https://youtu.be/ESXzSz2Z1W4?t=18m45s Wraz ze wstępem tworzą świetną klamrę kompozycyjną.", url: "https://genius.com/6412420/Taco-hemingway-trojkat/Inne-stoliki-nie-byy-obsuzone-ja-byem-obsuzony-ja-byem-obsuzony-dla-mnie-bya-kazda-wodka-i-kazda-potrawa-i-kazda-muzyka-w-orkiestrze" }
+};
+var referencesRu = {
+  1: { title: "Самое любопытное во всей этой моей истории, пожалуй, гастрономический мир.", text: "Cytat pochodzi z filmu dokumentalnego o Czesławie Śliwie, pt. “Konsul” i inni z 1970 roku. https://youtu.be/ESXzSz2Z1W4?t=18m15s Świetny wstęp do kawałka, w którym narrator odwiedza różne kluby i bary.", url: "", videoId: "ESXzSz2Z1W4" }
+};
+  </script>
+  <script src="track.js"></script>
 </body>
 </html>

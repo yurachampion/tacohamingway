@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>(Przerywnik) — Разбор треков</title>
+  <title>(интермедия) — Разбор треков</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="view-both">
@@ -32,17 +32,106 @@
       </nav>
     </header>
     <div class="track-content-main">
-    <h1 class="track-page-title">(Przerywnik)</h1>
-    <div class="content-wrapper">
-      <div class="lyrics-columns">
-        <div class="lyrics-column"><h3>Tekst po polsku</h3><p class="lyrics-placeholder">Текст в разработке.</p></div>
-        <div class="lyrics-column"><h3>Текст на русском</h3><p class="lyrics-placeholder">Текст в разработке.</p></div>
+    <h1 class="track-page-title">(przerywnik)</h1>
+    <p class="track-subtitle">(интермедия)</p>
+    <div class="content-wrapper" id="contentWrapper">
+      <div class="lyrics-main">
+        <div class="view-toggles" role="tablist" aria-label="Режим отображения текста">
+          <button type="button" class="view-toggle active" data-view="both" aria-pressed="true">Оба языка</button>
+          <button type="button" class="view-toggle" data-view="pol" aria-pressed="false">Только польский</button>
+          <button type="button" class="view-toggle" data-view="ru" aria-pressed="false">Только русский</button>
+        </div>
+        
+        <div class="notes-block">
+          <div class="note-block note-pl">
+            <h4 class="note-label">Примечание (польский)</h4>
+            <blockquote class="lyrics-note">Główny Bohater wszczyna kolejny nocny pościg za Eks. Zmęczony maszerowaniem, decyduje się wsiąść w taksówkę i wykonuje rajd po warszawskich klubach i lokalach gastronomicznych. Ostatecznie wysiada na ulicy Mazowieckiej. Tam, pod koniec zwiadów, trafia na Piotra, który idzie w stronę Kredytowej z najnowszą wybranką. Okazuje się zatem, że to nasz Bohater jest ową postacią, której „wrogi wzrok&quot; opisywał Piotr w poprzedniej piosence. Nasz podmiot liryczny udaje się w stronę Planu B, wypowiadając swojej Eks ultimatum: ma odwiedzić go na Placu Zbawiciela, albo może zapomnieć o nim na zawsze.</blockquote>
+          </div>
+          <div class="note-block note-ru">
+            <h4 class="note-label">Примечание (русский)</h4>
+            <blockquote class="lyrics-note">Главный герой снова начинает ночную погоню за бывшей. Устав от бесконечного марш-броска, он решает сесть в такси и устраивает рейд по варшавским клубам и заведениями. В итоге он выходит на улице Мазовецкой. Там, под конец своих поисков, он встречает Петра, который идет в сторону Кредитовой со своей новой пассией. Так выясняется, что именно наш герой и есть тот человек, чей «враждебный взгляд» Петр описывал в предыдущей песне. Лирический герой направляется в бар Plan B и ставит бывшей ультиматум: либо она приходит к нему на Площадь Спасителя, либо может забыть о нем навсегда.</blockquote>
+          </div>
+        </div>
+        <div class="lyrics-columns lyrics-paired" id="lyricsColumns">
+          <div class="lyrics-paired-headers">
+            <h3 class="lyrics-line-pl">Tekst po polsku</h3>
+            <h3 class="lyrics-line-ru">Текст на русском</h3>
+          </div>
+          <div class="lyrics-text" id="lyricsPolish"><div class="lyrics-part">
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><em>[Zwrotka]</em></p></div><div class="lyrics-line-ru"><p><em>[Куплет]</em></p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="1">Maszerowałem, żeby wiedzieć, gdzie ty dzisiaj jesteś</span></p></div><div class="lyrics-line-ru"><p>Я маршировал, чтобы узнать, где ты сегодня</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="2">Czy w Powiększeniu, czy w Patio, czy w 1500</span></p></div><div class="lyrics-line-ru"><p>В Powiększenie, в Patio или в 1500</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="3">Zwiedziłem Plan B i Barkę i z tysiąc więcej</span></p></div><div class="lyrics-line-ru"><p>Я обошел Plan B, Barkę и еще тысячу мест</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="4">Tych miejsc i zwiedzę drugi tysiąc nim się zniechęcę</span></p></div><div class="lyrics-line-ru"><p>И обойду вторую тысячу, прежде чем сдамся</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="5">Tylko jedno spotkanie, a potem mogę umierać</span></p></div><div class="lyrics-line-ru"><p>Мне нужна одна встреча, и можно умирать</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Więc latam wte i wewte, jak ten pierdolony bumerang</p></div><div class="lyrics-line-ru"><p>Я мотаюсь туда-сюда, как чертов бумеранг</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Byłem we wszystkich Kebab Kingach, no i Bobby Burgerach</p></div><div class="lyrics-line-ru"><p>Я был во всех Kebab King и в Bobby Burger</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Pytałem taksówkarzy, dokąd młodych wozi się teraz</p></div><div class="lyrics-line-ru"><p>Я спрашивал таксистов, куда сейчас возят молодежь</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Wsiadam w taksówkę, płynę z kierowcą w dymie</p></div><div class="lyrics-line-ru"><p>Сажусь в такси, плыву с водителем в дыму</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="6">Palimy szlugi, wysiadam przy Nowej Jerozolimie</span></p></div><div class="lyrics-line-ru"><p>Мы курим сиги, выхожу на Алее Йерусалимской</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="7">Gapią się ludzie jak Muminki, kiedy Buka w Dolinie</span></p></div><div class="lyrics-line-ru"><p>Люди пялятся, как Муми-тролли, когда Бука в долине</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="8">W kieszeni ruda Mała Mi</span>, usta czarne po winie</p></div><div class="lyrics-line-ru"><p>В кармане рыжая Малышка Мю и губы черные от вина</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="9">Opuszki twarde jak łuski, byłem w Syrenim Śpiewie</span></p></div><div class="lyrics-line-ru"><p>Кончики пальцев жесткие, как чешуя, я был в Syreni Śpiew</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>I na Powiślu wśród grafitti o Wiśle no i Widzewie</p></div><div class="lyrics-line-ru"><p>И на Powiśle среди граффити о Висле и о Видзеве</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>O Lechu, no i o Lechii, Cracovii, PZPNie</p></div><div class="lyrics-line-ru"><p>О Лехе, о Лехии, о Краковии, о ПФС</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Mam wrażenie, że od roku jestem wiecznie w terenie</p></div><div class="lyrics-line-ru"><p>У меня ощущение, что уже год я вечно где-то на поле</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Wracam na Mazowiecką, widzę jego chyba</p></div><div class="lyrics-line-ru"><p>Возвращаюсь на Мазовецкую, кажется, вижу его</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Tak to on. Tak to on. Tak, tak, to on. Ten warszawski Łotr</p></div><div class="lyrics-line-ru"><p>Да, это он. Да, это он. Да-да, это он. Этот варшавский негодяй</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Twój lowelas, rusza się jak gruba ryba</p></div><div class="lyrics-line-ru"><p>Твой ловелас, двигается, как важная рыба</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Z bratobójczo-zagryzionym śledziem, w gardle wóda pływa</p></div><div class="lyrics-line-ru"><p>С какой-то братски-загрызанной селдью, в горле плавает водка</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Stoi z jakąś inną dupą, która wódę mu nabywa</p></div><div class="lyrics-line-ru"><p>Он стоит с какой-то другой бабой, и она покупает ему водку</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Idą w stronę Kredytowej, tam się trop urywa</p></div><div class="lyrics-line-ru"><p>Они идут в сторону Кредитовой, там след и обрывается</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>I w sumie nie obchodzi mnie nic</p></div><div class="lyrics-line-ru"><p>И, по правде, мне уже все равно</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>I w sumie raczej dosyć chcę mi się pić</p></div><div class="lyrics-line-ru"><p>И, по правде, мне очень хочется пить</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Panie Kierowco, proszę wieźć na Zbawix</p></div><div class="lyrics-line-ru"><p>Пан водитель, пожалуйста, везите на Zbawix</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Bo w sumie raczej nie zaszkodzi tam iść</p></div><div class="lyrics-line-ru"><p>В общем-то, туда не повредит зайти</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Zwłaszcza że zaczął padać nam deszcz (nam deszcz)</p></div><div class="lyrics-line-ru"><p>Тем более что дождь начался (начался дождь)</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Widzę na Insta, że ty też jesteś gdzieś (gdzieś gdzieś)</p></div><div class="lyrics-line-ru"><p>Вижу в инсте, что ты тоже где-то здесь (где-то, где-то)</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Myślałaś głupia, że uciekniesz mi, lecz (mi, lecz)</p></div><div class="lyrics-line-ru"><p>Ты, дурочка, думала, от меня убежишь, но нет</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Komu jak komu, mi nie mówi się „precz” (precz, precz, precz, precz)</p></div><div class="lyrics-line-ru"><p>Кому-кому, а мне не говорят «проваливай»</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Powiem Ci, jak zrobimy, daje Ci ostatnią szansę</p></div><div class="lyrics-line-ru"><p>Я скажу, как мы сделаем: даю тебе последний шанс</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Zdzwonimy się i przyjdź do Planu, albo koniec tych tańców</p></div><div class="lyrics-line-ru"><p>Созвонимся, и приходи к Plan B, или танцам конец</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Kurwa mać (mać, mać, mać)</p></div><div class="lyrics-line-ru"><p>Блять (ять, ять, ять)</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p></p></div><div class="lyrics-line-ru"><p></p></div></div>
+</div>
+<div class="lyrics-part">
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><em>[Outro]</em></p></div><div class="lyrics-line-ru"><p><em>[Аутро]</em></p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="10">Pierwsze ofiary nadużycia tańców, najważniejsze, że wszyscy rozumieją co jest grane. Zabawa wre nadal!</span></p></div><div class="lyrics-line-ru"><p>Первые жертвы злоупотребления танцами. Главное, что все понимают, что происходит. Вечеринка продолжается!</p></div></div>
+</div></div>
       </div>
-    </div>
+      </div>
+      <aside class="reference-panel" id="referencePanel">
+        <div class="reference-header">
+          <h4 id="referenceTitle">Справка</h4>
+          <button class="close-reference" id="closeReference" aria-label="Закрыть">×</button>
+        </div>
+        <div class="reference-content" id="referenceContent">
+          <p class="reference-placeholder">Кликни на выделенное слово в тексте, чтобы увидеть справку.</p>
+        </div>
+      </aside>
+    
     </div>
     <footer class="site-footer">
       <p>Разбор треков Taco Hemingway · Trójkąt Warszawski · 2025</p>
     </footer>
   </section>
+        <script>
+var referencesPl = {
+  1: { title: "Maszerowałem, żeby wiedzieć, gdzie ty dzisiaj jesteś", text: "Bohater opisuje, co robił w poprzedniej części EPki, czyli na przykład w utworrze Marsz, marsz Szukał on swojej eks po całej Warszawie, zwiedzał miejsca, które wspomina w następnych wersach.", url: "https://genius.com/7255042/Taco-hemingway-przerywnik/Maszerowaem-zeby-wiedziec-gdzie-ty-dzisiaj-jestes" },
+  2: { title: "Czy w Powiększeniu, czy w Patio, czy w 1500", text: "Taco kolejno wymienia tutaj warszawskie kluby: Powiększenie Patio 1500m2", url: "https://genius.com/5153166/Taco-hemingway-przerywnik/Czy-w-powiekszeniu-czy-w-patio-czy-w-1500" },
+  3: { title: "Zwiedziłem Plan B i Barkę i z tysiąc więcej", text: "Mamy kolejne dwa warszawskie kluby: Plan B Barka", url: "https://genius.com/5153187/Taco-hemingway-przerywnik/Zwiedziem-plan-b-i-barke-i-z-tysiac-wiecej" },
+  4: { title: "Tych miejsc i zwiedzę drugi tysiąc nim się zniechęcę", text: "Póki się nie zniechęci do bohaterki to może zrobić dla niej wszystko", url: "https://genius.com/35114497/Taco-hemingway-przerywnik/Tych-miejsc-i-zwiedze-drugi-tysiac-nim-sie-zniechece" },
+  5: { title: "Tylko jedno spotkanie, a potem mogę umierać", text: "Dla Filipa liczy się tylko spotkanie z EX a potem może umierać", url: "https://genius.com/35114499/Taco-hemingway-przerywnik/Tylko-jedno-spotkanie-a-potem-moge-umierac" },
+  6: { title: "Palimy szlugi, wysiadam przy Nowej Jerozolimie", text: "Taksówkarz zawiózł bohatera do kolejnego warszawskiego klubu – Nowa Jerozolima", url: "https://genius.com/7255057/Taco-hemingway-przerywnik/Palimy-szlugi-wysiadam-przy-nowej-jerozolimie" },
+  7: { title: "Gapią się ludzie jak Muminki, kiedy Buka w Dolinie", text: "Ludzie widząc bohatera wysiadającego z taksówki mają wrogie spojrzenie niczym Muminki, kiedy ich krainę nawiedza Buka (czarny charakter tej bajki). Poniżej fragment bajki ukazujący takie spojrzenie: https://www.youtube.com/watch?v=QeRodAoZLGk&feature=youtu.be&t=3m5s — Dolina Muminków to również nazwa klubu w Warszawie.", url: "https://genius.com/7208731/Taco-hemingway-przerywnik/Gapia-sie-ludzie-jak-muminki-kiedy-buka-w-dolinie" },
+  8: { title: "W kieszeni ruda Mała Mi", text: "Bynajmniej nie chodzi tu o żołądkową gorzką. Ruda to bohaterka głównej historii przedstawionej w EP-ce, eks głównego bohatera. Ma ją w kieszeni w telefonie, wypisuje do niej wiadomości na fejsie i obserwuje jej instagram.", url: "https://genius.com/7208687/Taco-hemingway-przerywnik/W-kieszeni-ruda-maa-mi" },
+  9: { title: "Opuszki twarde jak łuski, byłem w Syrenim Śpiewie", text: "Syreni Śpiew – kolejny bardzo klimatyczny warszawski klub (dobry wybór, Taco!)", url: "https://genius.com/7255065/Taco-hemingway-przerywnik/Opuszki-twarde-jak-uski-byem-w-syrenim-spiewie" },
+  10: { title: "Pierwsze ofiary nadużycia tańców, najważniejsze, że wszyscy …", text: "https://youtu.be/NQu6v-zpavM?t=1m28s", url: "https://genius.com/7255084/Taco-hemingway-przerywnik/Pierwsze-ofiary-naduzycia-tancow-najwazniejsze-ze-wszyscy-rozumieja-co-jest-grane-zabawa-wre-nadal" }
+};
+var referencesRu = {
+  
+};
+  </script>
+  <script src="track.js"></script>
 </body>
 </html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Админка — сноски</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body.admin-page { padding: 1rem 2rem; max-width: 1200px; margin: 0 auto; }
+    .admin-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.5rem; }
+    .admin-header h1 { margin: 0; font-size: 1.5rem; }
+    .admin-actions { display: flex; gap: 0.5rem; }
+    .admin-actions button { padding: 0.5rem 1rem; cursor: pointer; border-radius: 6px; border: 1px solid #444; background: #2a2a2a; color: #eee; }
+    .admin-actions button.primary { background: #1a5; border-color: #1a5; }
+    .admin-actions button:hover { background: #333; }
+    .admin-actions button.primary:hover { background: #2b7; }
+    .track-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+    .track-list button { padding: 0.4rem 0.8rem; border-radius: 6px; border: 1px solid #444; background: #252525; color: #ccc; cursor: pointer; }
+    .track-list button.active { background: #333; border-color: #6a6; color: #fff; }
+    .footnotes-section h2 { font-size: 1.1rem; margin-bottom: 0.75rem; }
+    .footnote-card { border: 1px solid #333; border-radius: 8px; padding: 1rem; margin-bottom: 1rem; background: #1e1e1e; }
+    .footnote-card h3 { margin: 0 0 0.5rem 0; font-size: 0.95rem; color: #8af; }
+    .footnote-card label { display: block; margin-top: 0.5rem; color: #999; font-size: 0.85rem; }
+    .footnote-card input[type="text"], .footnote-card textarea { width: 100%; padding: 0.4rem; margin-top: 0.2rem; border-radius: 4px; border: 1px solid #444; background: #252525; color: #eee; box-sizing: border-box; }
+    .footnote-card textarea { min-height: 60px; resize: vertical; }
+    .footnote-card .row { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .footnote-card .row > * { flex: 1; min-width: 200px; }
+    .footnote-card .image-preview { max-width: 120px; max-height: 80px; margin-top: 0.3rem; border-radius: 4px; }
+    .footnote-card .upload-row { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .footnote-card .upload-row input[type="file"] { width: auto; }
+    .status { margin-top: 0.5rem; font-size: 0.85rem; color: #6a6; }
+    .status.err { color: #c55; }
+    .loading { color: #888; }
+    .lyrics-block { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+    @media (max-width: 700px) { .lyrics-block { grid-template-columns: 1fr; } }
+    .lyrics-column h3 { margin: 0 0 0.5rem 0; font-size: 0.9rem; color: #888; }
+    .lyrics-edit { width: 100%; min-height: 280px; font-size: 0.85rem; line-height: 1.5; padding: 0.75rem; border: 1px solid #333; border-radius: 6px; background: #1a1a1a; color: #ccc; resize: vertical; font-family: inherit; box-sizing: border-box; white-space: pre-wrap; }
+    .footnote-card .card-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
+    .footnote-card .card-head h3 { margin: 0; }
+    .footnote-card .btn-delete { padding: 0.25rem 0.5rem; font-size: 0.8rem; background: #522; border-color: #833; color: #faa; cursor: pointer; border-radius: 4px; }
+    .footnote-card .btn-delete:hover { background: #633; }
+    .add-footnote-wrap { margin-bottom: 1rem; }
+    .add-footnote-wrap button { padding: 0.5rem 1rem; background: #262; border: 1px solid #383; color: #cfc; border-radius: 6px; cursor: pointer; }
+    .add-footnote-wrap button:hover { background: #373; }
+    .key-hint { font-weight: normal; color: #666; font-size: 0.85em; }
+    .fragment-ru-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
+    .fragment-ru-row input[name="fragment_ru"] { flex: 1; min-width: 200px; }
+    .fragment-ru-pick { font-size: 0.85rem; max-width: 280px; padding: 0.3rem; }
+    .format-toolbar-wrap { margin-top: 0.2rem; }
+    .format-toolbar { display: flex; gap: 0.35rem; margin-bottom: 0.35rem; flex-wrap: wrap; }
+    .format-toolbar button { padding: 0.25rem 0.5rem; font-size: 0.8rem; background: #333; border: 1px solid #555; color: #ccc; border-radius: 4px; cursor: pointer; }
+    .format-toolbar button:hover { background: #444; color: #fff; }
+  </style>
+</head>
+<body class="admin-page">
+  <header class="admin-header">
+    <h1>Сноски — админка</h1>
+    <div class="admin-actions">
+      <a href="/">На сайт</a>
+      <button type="button" class="primary" id="saveBtn">Сохранить</button>
+    </div>
+  </header>
+
+  <p class="status" id="status"></p>
+
+  <div class="track-list" id="trackList"></div>
+  <section class="footnotes-section" id="footnotesSection" style="display: none;">
+    <h2 id="footnotesTitle">Сноски</h2>
+    <div class="track-meta-block" id="trackMetaBlock" style="margin-bottom: 1.5rem;">
+      <h3 style="font-size: 1rem; margin-bottom: 0.5rem; color: #8af;">Название и примечание трека</h3>
+      <label>Название (PL)</label>
+      <input type="text" id="trackTitlePl" placeholder="Польское название трека" style="width: 100%; padding: 0.4rem; margin-bottom: 0.5rem; box-sizing: border-box;">
+      <label>Название (RU)</label>
+      <input type="text" id="trackTitleRu" placeholder="Русское название трека" style="width: 100%; padding: 0.4rem; margin-bottom: 0.5rem; box-sizing: border-box;">
+      <label>Примечание (PL)</label>
+      <textarea id="trackNotePl" placeholder="Примечание из буклета (польский)" style="width: 100%; min-height: 60px; padding: 0.4rem; margin-bottom: 0.5rem; box-sizing: border-box; resize: vertical;"></textarea>
+      <label>Примечание (RU)</label>
+      <textarea id="trackNoteRu" placeholder="Примечание из буклета (русский)" style="width: 100%; min-height: 60px; padding: 0.4rem; margin-bottom: 0.5rem; box-sizing: border-box; resize: vertical;"></textarea>
+    </div>
+    <div class="lyrics-block" id="lyricsBlock" style="display: none;">
+      <div class="lyrics-column">
+        <h3>Текст (PL) — можно редактировать</h3>
+        <textarea class="lyrics-edit" id="lyricsPl" placeholder="Польский текст песни (каждая строка — с новой строки)"></textarea>
+      </div>
+      <div class="lyrics-column">
+        <h3>Текст (RU) — можно редактировать</h3>
+        <textarea class="lyrics-edit" id="lyricsRu" placeholder="Русский текст песни (каждая строка — с новой строки)"></textarea>
+      </div>
+    </div>
+    <div class="add-footnote-wrap">
+      <button type="button" id="addFootnoteBtn">+ Добавить сноску</button>
+    </div>
+    <div id="footnotesList"></div>
+  </section>
+
+  <script>
+    var content = { tracks: {} };
+    var currentTrack = null;
+    var statusEl = document.getElementById("status");
+    var trackListEl = document.getElementById("trackList");
+    var footnotesSection = document.getElementById("footnotesSection");
+    var footnotesTitle = document.getElementById("footnotesTitle");
+    var footnotesListEl = document.getElementById("footnotesList");
+    var saveBtn = document.getElementById("saveBtn");
+
+    function setStatus(msg, isError) {
+      statusEl.textContent = msg;
+      statusEl.className = "status" + (isError ? " err" : "");
+    }
+
+    function loadContent() {
+      setStatus("Загрузка…", false);
+      fetch("/api/content")
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          content = data;
+          renderTracks();
+          setStatus("Загружено. Выберите трек.");
+        })
+        .catch(function (e) {
+          setStatus("Ошибка: " + e.message, true);
+        });
+    }
+
+    function renderTracks() {
+      var slugs = Object.keys(content.tracks || {}).sort();
+      trackListEl.innerHTML = slugs.map(function (slug) {
+        var count = Object.keys((content.tracks[slug] || {}).footnotes || {}).length;
+        return "<button type=\"button\" data-slug=\"" + slug + "\" class=\"" + (currentTrack === slug ? "active" : "") + "\">" + slug + " (" + count + ")</button>";
+      }).join("");
+      trackListEl.querySelectorAll("button").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          currentTrack = btn.getAttribute("data-slug");
+          renderTracks();
+          renderFootnotes();
+        });
+      });
+    }
+
+    function escapeHtml(s) {
+      if (!s) return "";
+      var div = document.createElement("div");
+      div.textContent = s;
+      return div.innerHTML;
+    }
+
+    function renderFootnotes() {
+      if (!currentTrack || !content.tracks[currentTrack]) {
+        footnotesSection.style.display = "none";
+        return;
+      }
+      footnotesSection.style.display = "block";
+      footnotesTitle.textContent = "Сноски: " + currentTrack;
+      var lyricsPl = (content.tracks[currentTrack].lyrics_pl || "").trim();
+      var lyricsRu = (content.tracks[currentTrack].lyrics_ru || "").trim();
+      var lyricsBlock = document.getElementById("lyricsBlock");
+      if (lyricsBlock) {
+        lyricsBlock.style.display = "grid";
+        var plEl = document.getElementById("lyricsPl");
+        var ruEl = document.getElementById("lyricsRu");
+        if (plEl) plEl.value = lyricsPl || "";
+        if (ruEl) ruEl.value = lyricsRu || "";
+      }
+      var t = content.tracks[currentTrack];
+      var titlePlEl = document.getElementById("trackTitlePl");
+      var titleRuEl = document.getElementById("trackTitleRu");
+      var notePlEl = document.getElementById("trackNotePl");
+      var noteRuEl = document.getElementById("trackNoteRu");
+      if (titlePlEl) titlePlEl.value = (t.title_pl || "").trim();
+      if (titleRuEl) titleRuEl.value = (t.title_ru || "").trim();
+      if (notePlEl) notePlEl.value = (t.note_pl || "").trim();
+      if (noteRuEl) noteRuEl.value = (t.note_ru || "").trim();
+      var footnotes = content.tracks[currentTrack].footnotes || {};
+      var lyricsPl = (content.tracks[currentTrack].lyrics_pl || "").trim();
+      var lyricsRu = (content.tracks[currentTrack].lyrics_ru || "").trim();
+      var linesRu = lyricsRu.split("\n").filter(function (l) { return l.trim(); });
+      var keys = Object.keys(footnotes);
+      keys.sort(function (a, b) {
+        var fragA = (footnotes[a].fragment_pl || "").trim();
+        var fragB = (footnotes[b].fragment_pl || "").trim();
+        var posA = lyricsPl.indexOf(fragA);
+        var posB = lyricsPl.indexOf(fragB);
+        if (posA < 0) posA = 999999;
+        if (posB < 0) posB = 999999;
+        return posA - posB;
+      });
+      footnotesListEl.innerHTML = keys.map(function (key, index) {
+        var fn = footnotes[key] || {};
+        var img = fn.image ? "<img class=\"image-preview\" src=\"" + escapeHtml(fn.image) + "\" alt=\"\">" : "";
+        return (
+          "<div class=\"footnote-card\" data-key=\"" + escapeHtml(key) + "\">" +
+            "<div class=\"card-head\"><h3>Сноска " + (index + 1) + " <span class=\"key-hint\">(в тексте по порядку)</span></h3><button type=\"button\" class=\"btn-delete\" data-key=\"" + escapeHtml(key) + "\">Удалить</button></div>" +
+            "<label>Фрагмент (PL) — фраза в польском тексте</label><input type=\"text\" name=\"fragment_pl\" value=\"" + escapeHtml((fn.fragment_pl || "")) + "\" placeholder=\"скопируйте из текста выше\">" +
+            "<label>Фрагмент (RU) — фраза в русском тексте (если пусто — выделения в русской колонке не будет)</label>" +
+            "<div class=\"fragment-ru-row\">" +
+              "<input type=\"text\" name=\"fragment_ru\" value=\"" + escapeHtml((fn.fragment_ru || "")) + "\" placeholder=\"скопируйте или выберите ниже\">" +
+              "<select class=\"fragment-ru-pick\" title=\"Подставить строку из текста\"><option value=\"\">— подставить строку из текста —</option>" +
+              linesRu.map(function (ln) { var v = escapeHtml(ln); var lbl = ln.length > 55 ? escapeHtml(ln.slice(0, 55) + "…") : v; return "<option value=\"" + v + "\">" + lbl + "</option>"; }).join("") +
+              "</select>" +
+            "</div>" +
+            "<label>Заголовок (PL)</label><input type=\"text\" name=\"title_pl\" value=\"" + escapeHtml((fn.title_pl || "")) + "\">" +
+            "<label>Текст (PL)</label><div class=\"format-toolbar-wrap\"><div class=\"format-toolbar\"><button type=\"button\" class=\"fmt-btn\" data-tag=\"b\">Жирный</button><button type=\"button\" class=\"fmt-btn\" data-tag=\"i\">Курсив</button><button type=\"button\" class=\"fmt-btn\" data-tag=\"blockquote\">Цитата</button></div><textarea name=\"text_pl\">" + escapeHtml((fn.text_pl || "")) + "</textarea></div>" +
+            "<label>Заголовок (RU)</label><input type=\"text\" name=\"title_ru\" value=\"" + escapeHtml((fn.title_ru || "")) + "\">" +
+            "<label>Текст (RU)</label><div class=\"format-toolbar-wrap\"><div class=\"format-toolbar\"><button type=\"button\" class=\"fmt-btn\" data-tag=\"b\">Жирный</button><button type=\"button\" class=\"fmt-btn\" data-tag=\"i\">Курсив</button><button type=\"button\" class=\"fmt-btn\" data-tag=\"blockquote\">Цитата</button></div><textarea name=\"text_ru\">" + escapeHtml((fn.text_ru || "")) + "</textarea></div>" +
+            "<label>URL (Genius и т.п.)</label><input type=\"text\" name=\"url\" value=\"" + escapeHtml((fn.url || "")) + "\" placeholder=\"https://genius.com/...\">" +
+            "<label>Видео (YouTube)</label><input type=\"text\" name=\"video\" value=\"" + escapeHtml((fn.video || "")) + "\" placeholder=\"https://www.youtube.com/watch?v=...\">" +
+            "<label>Картинка</label>" +
+            "<div class=\"upload-row\">" +
+              (img || "") +
+              "<input type=\"file\" accept=\"image/*\" data-key=\"" + escapeHtml(key) + "\">" +
+              "<input type=\"text\" name=\"image\" value=\"" + escapeHtml((fn.image || "")) + "\" placeholder=\"или путь /uploads/...\">" +
+            "</div>" +
+          "</div>"
+        );
+      }).join("");
+
+      footnotesListEl.querySelectorAll(".footnote-card").forEach(function (card) {
+        var key = card.getAttribute("data-key");
+        card.querySelectorAll("input[type=\"text\"], textarea").forEach(function (input) {
+          input.addEventListener("input", function () {
+            var name = input.getAttribute("name");
+            if (!content.tracks[currentTrack].footnotes[key]) content.tracks[currentTrack].footnotes[key] = {};
+            content.tracks[currentTrack].footnotes[key][name] = input.value;
+          });
+        });
+        var ruPick = card.querySelector(".fragment-ru-pick");
+        if (ruPick) {
+          ruPick.addEventListener("change", function () {
+            var inp = card.querySelector("input[name=\"fragment_ru\"]");
+            if (inp && this.value) {
+              inp.value = this.value;
+              if (!content.tracks[currentTrack].footnotes[key]) content.tracks[currentTrack].footnotes[key] = {};
+              content.tracks[currentTrack].footnotes[key].fragment_ru = this.value;
+            }
+            this.selectedIndex = 0;
+          });
+        }
+        var delBtn = card.querySelector(".btn-delete");
+        if (delBtn) {
+          delBtn.addEventListener("click", function () {
+            var k = delBtn.getAttribute("data-key");
+            if (!content.tracks[currentTrack] || !content.tracks[currentTrack].footnotes) return;
+            if (confirm("Удалить сноску с ключом " + k + "? На сайте выделение этого фрагмента будет убрано после следующего запуска merge.")) {
+              delete content.tracks[currentTrack].footnotes[k];
+              renderFootnotes();
+              setStatus("Сноска удалена. Нажмите «Сохранить», затем запустите merge_content_into_html.py.");
+            }
+          });
+        }
+        var fileInput = card.querySelector("input[type=\"file\"]");
+        if (fileInput) {
+          fileInput.addEventListener("change", function () {
+            var file = fileInput.files[0];
+            if (!file) return;
+            var form = new FormData();
+            form.append("file", file);
+            setStatus("Загрузка изображения…", false);
+            fetch("/api/upload", { method: "POST", body: form })
+              .then(function (r) { return r.json(); })
+              .then(function (res) {
+                if (res.ok && res.path) {
+                  content.tracks[currentTrack].footnotes[key].image = res.path;
+                  card.querySelector("input[name=\"image\"]").value = res.path;
+                  var prev = card.querySelector(".image-preview");
+                  if (prev) prev.remove();
+                  var img = document.createElement("img");
+                  img.className = "image-preview";
+                  img.src = res.path;
+                  card.querySelector(".upload-row").insertBefore(img, fileInput);
+                  setStatus("Изображение загружено: " + res.path);
+                } else setStatus("Ошибка загрузки: " + (res.error || "unknown"), true);
+              })
+              .catch(function (e) { setStatus("Ошибка: " + e.message, true); });
+            fileInput.value = "";
+          });
+        }
+        card.querySelectorAll(".format-toolbar-wrap").forEach(function (wrap) {
+          var ta = wrap.querySelector("textarea");
+          var fmtBtns = wrap.querySelectorAll(".fmt-btn");
+          if (!ta || !fmtBtns.length) return;
+          fmtBtns.forEach(function (btn) {
+            btn.addEventListener("click", function () {
+              var tag = btn.getAttribute("data-tag");
+              if (!tag) return;
+              ta.focus();
+              var start = ta.selectionStart;
+              var end = ta.selectionEnd;
+              var val = ta.value;
+              var sel = val.slice(start, end);
+              var name = ta.getAttribute("name");
+              var wrapped;
+              if (tag === "blockquote") {
+                wrapped = (sel ? "<blockquote>" + sel + "</blockquote>" : "<blockquote>цитата</blockquote>");
+              } else {
+                wrapped = "<" + tag + ">" + (sel || "текст") + "</" + tag + ">";
+              }
+              var newVal = val.slice(0, start) + wrapped + val.slice(end);
+              ta.value = newVal;
+              if (!content.tracks[currentTrack].footnotes[key]) content.tracks[currentTrack].footnotes[key] = {};
+              content.tracks[currentTrack].footnotes[key][name] = newVal;
+              ta.setSelectionRange(start + wrapped.length, start + wrapped.length);
+            });
+          });
+        });
+      });
+    }
+
+    function collectFormIntoContent() {
+      if (!currentTrack || !content.tracks[currentTrack]) return;
+      var plEl = document.getElementById("lyricsPl");
+      var ruEl = document.getElementById("lyricsRu");
+      if (plEl) content.tracks[currentTrack].lyrics_pl = plEl.value;
+      if (ruEl) content.tracks[currentTrack].lyrics_ru = ruEl.value;
+      var titlePlEl = document.getElementById("trackTitlePl");
+      var titleRuEl = document.getElementById("trackTitleRu");
+      var notePlEl = document.getElementById("trackNotePl");
+      var noteRuEl = document.getElementById("trackNoteRu");
+      if (titlePlEl) content.tracks[currentTrack].title_pl = titlePlEl.value.trim();
+      if (titleRuEl) content.tracks[currentTrack].title_ru = titleRuEl.value.trim();
+      if (notePlEl) content.tracks[currentTrack].note_pl = notePlEl.value.trim();
+      if (noteRuEl) content.tracks[currentTrack].note_ru = noteRuEl.value.trim();
+      footnotesListEl.querySelectorAll(".footnote-card").forEach(function (card) {
+        var key = card.getAttribute("data-key");
+        if (!content.tracks[currentTrack].footnotes[key]) content.tracks[currentTrack].footnotes[key] = {};
+        card.querySelectorAll("input[name], textarea[name]").forEach(function (input) {
+          content.tracks[currentTrack].footnotes[key][input.getAttribute("name")] = input.value || null;
+        });
+      });
+    }
+
+    document.getElementById("addFootnoteBtn").addEventListener("click", function () {
+      if (!currentTrack || !content.tracks[currentTrack]) return;
+      var footnotes = content.tracks[currentTrack].footnotes || {};
+      var keys = Object.keys(footnotes).map(function (k) { return parseInt(k, 10); }).filter(function (n) { return !isNaN(n); });
+      var nextKey = keys.length ? Math.max.apply(null, keys) + 1 : 1;
+      content.tracks[currentTrack].footnotes[String(nextKey)] = {
+        fragment_pl: "",
+        fragment_ru: "",
+        title_pl: "",
+        title_ru: "",
+        text_pl: "",
+        text_ru: "",
+        url: "",
+        image: null,
+        video: null
+      };
+      renderFootnotes();
+      setStatus("Добавлена сноска с ключом " + nextKey + ". Заполните «Фрагмент (PL)» (фразу из текста) и сохраните. Затем запустите merge_content_into_html.py.");
+    });
+
+    saveBtn.addEventListener("click", function () {
+      collectFormIntoContent();
+      setStatus("Сохранение…", false);
+      fetch("/api/content", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(content)
+      })
+        .then(function (r) { return r.json(); })
+        .then(function (res) {
+          if (res.ok) setStatus("Сохранено.");
+          else setStatus("Ошибка: " + (res.error || "unknown"), true);
+        })
+        .catch(function (e) { setStatus("Ошибка: " + e.message, true); });
+    });
+
+    loadContent();
+  </script>
+</body>
+</html>

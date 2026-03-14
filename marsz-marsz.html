@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marsz, Marsz — Разбор треков</title>
+  <title>Марш, марш — Разбор треков</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="view-both">
@@ -33,22 +33,196 @@
     </header>
     <div class="track-content-main">
     <h1 class="track-page-title">Marsz, Marsz</h1>
-    <div class="content-wrapper">
-      <div class="lyrics-columns">
-        <div class="lyrics-column">
-          <h3>Tekst po polsku</h3>
-          <p class="lyrics-placeholder">Текст в разработке.</p>
+    <p class="track-subtitle">Марш, марш</p>
+    <div class="content-wrapper" id="contentWrapper">
+      <div class="lyrics-main">
+        <div class="view-toggles" role="tablist" aria-label="Режим отображения текста">
+          <button type="button" class="view-toggle active" data-view="both" aria-pressed="true">Оба языка</button>
+          <button type="button" class="view-toggle" data-view="pol" aria-pressed="false">Только польский</button>
+          <button type="button" class="view-toggle" data-view="ru" aria-pressed="false">Только русский</button>
         </div>
-        <div class="lyrics-column">
-          <h3>Текст на русском</h3>
-          <p class="lyrics-placeholder">Текст в разработке.</p>
+        
+        <div class="notes-block">
+          <div class="note-block note-pl">
+            <h4 class="note-label">Примечание (польский)</h4>
+            <blockquote class="lyrics-note">Główny Bohater spaceruje po Warszawie, próbując odnaleźć swoją Eks. Ostatecznie wpada na nią i jest świadkiem sceny, w której młoda dziewczyna konfrontuje się z Piotrem. Mężczyzna ewidentnie łamie jej serce romansując z inną dziewczyną. Nasz Bohater brzydzi się zaistniałą sytuacją i postanawia wrócić do domu.</blockquote>
+          </div>
+          <div class="note-block note-ru">
+            <h4 class="note-label">Примечание (русский)</h4>
+            <blockquote class="lyrics-note">Главный герой бродит по Варшаве и пытается найти свою бывшую. В итоге он на неё натыкается и становится свидетелем сцены, где молодая девушка устраивает разборки с Петром: мужчина явно разбивает ей сердце, потому что крутит роман с другой. Герой испытывает отвращение к этой картине и решает вернуться домой.</blockquote>
+          </div>
         </div>
+        <div class="lyrics-columns lyrics-paired" id="lyricsColumns">
+          <div class="lyrics-paired-headers">
+            <h3 class="lyrics-line-pl">Tekst po polsku</h3>
+            <h3 class="lyrics-line-ru">Текст на русском</h3>
+          </div>
+          <div class="lyrics-text" id="lyricsPolish"><div class="lyrics-part">
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><em>[Zwrotka 1]</em></p></div><div class="lyrics-line-ru"><p><em>[Куплет 1]</em></p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="1">Wbijam tam z grubej rury, upijam się, mówię bzdury</span></p></div><div class="lyrics-line-ru"><p>Врываюсь без церемоний, напиваюсь и несу чушь,</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>I zaraz dostanę mandat, bo warczy ten kundel bury</p></div><div class="lyrics-line-ru"><p>Сейчас влепят штраф: рычит этот серый пёс.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Funkcjonariusza widzę, co łypie ze suczej fury</p></div><div class="lyrics-line-ru"><p>Вижу копа — косится из сучьей будки.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="2">Bo widział, jak tańczę w kroplach deszczyku z tej rudej chmury</span></p></div><div class="lyrics-line-ru"><p>Потому что видел, как я танцую под дождём из рыжей тучи.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="3">Drga mi grdyka, nie słyszę, bo gra muzyka</span></p></div><div class="lyrics-line-ru"><p>Кадык дрожит, но я не слышу, музыка гремит.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="4">Te dziewki ciągną te kreski, nie wspomną o Mazowieckim</span></p></div><div class="lyrics-line-ru"><p>Эти девки тянут дорожки, не вспомнят о Мазовецком.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Me serce znów za mną tęskni, bo znowu te lufy łykam</p></div><div class="lyrics-line-ru"><p>Моё сердце снова скучает по мне, ведь я опять глотаю эти выстрелы,</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>I całe od kul dziurawe i jak Rambo kuśtykam</p></div><div class="lyrics-line-ru"><p>Весь в дырках от пуль, но ковыляю, как Рэмбо, всем на зло.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="5">W tym mieście nikt już nie tańczy</span></p></div><div class="lyrics-line-ru"><p>В этом городе больше никто не танцует,</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="6">W tym mieście tango to frykas</span></p></div><div class="lyrics-line-ru"><p>Здесь танго — деликатес.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="7">Panowie owocowi chcą bananem mango dotykać</span></p></div><div class="lyrics-line-ru"><p>Фруктовые ребята хотят бананом манго потрогать,</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="8">Gardło nam usycha po narkotykach</span></p></div><div class="lyrics-line-ru"><p>Горло пересыхает от наркотиков.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="9">Każdy się z czartem i niefartem i ze szklanką boryka</span></p></div><div class="lyrics-line-ru"><p>Каждый тут воюет и с чёртом, и с неудачей, и со стаканом.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Biały proch Ci leci na czarne szpilki</p></div><div class="lyrics-line-ru"><p>Белый порошок сыпется на чёрные шпильки.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Pewnie wciągasz biel, jak kiedyś wciągałaś Big Milki</p></div><div class="lyrics-line-ru"><p>Наверно, ты любишь белый, как раньше любила Big Milki.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Jestem tu, powiedzieli mi, że wyszłaś o pierwszej</p></div><div class="lyrics-line-ru"><p>Мне сказали, что ты ушла в час ночи.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="10">A twoje usta się błyszczały jak lipcowe czereśnie</span></p></div><div class="lyrics-line-ru"><p>А губы у тебя блестели, как июльская черешня.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p></p></div><div class="lyrics-line-ru"><p></p></div></div>
+</div>
+<div class="lyrics-part">
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><em>[Refren]</em></p></div><div class="lyrics-line-ru"><p><em>[Припев]</em></p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="11">Ciebie znowu nie było</span></p></div><div class="lyrics-line-ru"><p>Тебя снова не было.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="12">Gdybyś nie istniała, miastu by wygodniej się żyło</span></p></div><div class="lyrics-line-ru"><p>Если бы тебя не существовало, городу жилось бы лучше.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Jestem tu, byłem tam, zresztą w sumie, kto nie był?</p></div><div class="lyrics-line-ru"><p>Я здесь, я был там, да кто тут, в сущности, не был?</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Jest tu cała WWA, z wyjątkiem Ciebie</p></div><div class="lyrics-line-ru"><p>Тут вся WWA — кроме тебя.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Jestem tu, byłem tam, poszłaś z koleżankami</p></div><div class="lyrics-line-ru"><p>Здесь был, был там — ты ушла с подругами,</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="13">Na tych nogach, które ja nazywam karabinami</span></p></div><div class="lyrics-line-ru"><p>На тех ногах, которые я зову карабинами.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="14">No,</span> to marsz, marsz</p></div><div class="lyrics-line-ru"><p>Ну так марш, марш.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Marsz, marsz, marsz</p></div><div class="lyrics-line-ru"><p>Марш, марш, марш.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p></p></div><div class="lyrics-line-ru"><p></p></div></div>
+</div>
+<div class="lyrics-part">
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><em>[Zwrotka 2]</em></p></div><div class="lyrics-line-ru"><p><em>[Куплет 2]</em></p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="15">Szukam cię po shot barach</span></p></div><div class="lyrics-line-ru"><p>Ищу тебя по шот-барам,</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="16">Z dziewczynami wyglądacie, jakbyście były na Oscarach</span></p></div><div class="lyrics-line-ru"><p>Вы с девчонками выглядите, будто на «Оскарах».</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Ja i koledzy oświadczymy wam się od zaraz</p></div><div class="lyrics-line-ru"><p>Мы с пацанами хоть сейчас вам предложение сделаем,</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Choć stanowimy pewnie jakąś bandę ciot dla was</p></div><div class="lyrics-line-ru"><p>Хотя для вас мы, наверное, просто банда тряпок.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="17">Wiążesz włosy w cebulę</span></p></div><div class="lyrics-line-ru"><p>Ты собираешь волосы в «луковицу»,</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="18">I pewnie świat Cię denerwuje jak Alutka Jędrulę</span></p></div><div class="lyrics-line-ru"><p>И мир тебя бесит, как Алутку Ендруля.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Pewnie Cię bolą oskrzela, a teraz dymem je czule</p></div><div class="lyrics-line-ru"><p>Наверно, бронхи болят, а ты их дымом нежно укутала,</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Opatuliłaś i zamawiasz sobie wódkę z Red Bullem</p></div><div class="lyrics-line-ru"><p>И заказываешь водку с Red Bull.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="19">Latacie po mieście jak Bójka, Bajka, Brawurka</span></p></div><div class="lyrics-line-ru"><p>Носитесь по городу, как Цветик, Пузырёк и Пестик,</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="20">Dźwigając swoje atrybuty: wóda, szampan, bibułka</span></p></div><div class="lyrics-line-ru"><p>Таща свои атрибуты: водку, шампанское и банкноты.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Dzika jak pustynne kresy, stepy, tajga i dżungla</p></div><div class="lyrics-line-ru"><p>Дикая, как пустыня, степь, тайга и джунгли,</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="21">A twoje rzęsy wobec mężczyzn są jak łańcuch dla kundla</span></p></div><div class="lyrics-line-ru"><p>А твои ресницы для мужиков как цепь для дворняги.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="22">Szukasz zapalniczki, ja bym dał Ci ogień</span></p></div><div class="lyrics-line-ru"><p>Ищешь зажигалку — я бы дал тебе огня</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>I nękał wzrokiem jak proboszcz, który gwałci Bogiem</p></div><div class="lyrics-line-ru"><p>И мучил бы взглядом, как священник, который мучает Богом.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>No, mon dieu, wciąż kochasz mnie, ja w to nie wątpię</p></div><div class="lyrics-line-ru"><p>Ну, mon dieu, ты всё ещё любишь меня — я не сомневаюсь,</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="23">Chociaż w zeszły piątek przecież poszłaś za tamtym Piotrkiem</span></p></div><div class="lyrics-line-ru"><p>Хотя в прошлую пятницу ты ушла за тем Петром…</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p></p></div><div class="lyrics-line-ru"><p></p></div></div>
+</div>
+<div class="lyrics-part">
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><em>[Refren]</em></p></div><div class="lyrics-line-ru"><p><em>[Припев]</em></p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Ciebie znowu nie było</p></div><div class="lyrics-line-ru"><p>Тебя снова не было.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Gdybyś nie istniała, miastu by wygodniej się żyło</p></div><div class="lyrics-line-ru"><p>Если бы тебя не существовало, городу жилось бы лучше.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Jestem tu, byłem tam, zresztą w sumie, kto nie był?</p></div><div class="lyrics-line-ru"><p>Я здесь, я был там, да кто тут, в сущности, не был?</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Jest tu cała WWA, z wyjątkiem Ciebie</p></div><div class="lyrics-line-ru"><p>Тут вся WWA — кроме тебя.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Jestem tu, byłem tam, poszłaś z koleżankami</p></div><div class="lyrics-line-ru"><p>Здесь был, был там — ты ушла с подругами,</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Na tych nogach, które ja nazywam karabinami</p></div><div class="lyrics-line-ru"><p>На тех ногах, которые я зову карабинами.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>No, to marsz, marsz</p></div><div class="lyrics-line-ru"><p>Ну так марш, марш.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Marsz, marsz, marsz</p></div><div class="lyrics-line-ru"><p>Марш, марш, марш.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p></p></div><div class="lyrics-line-ru"><p></p></div></div>
+</div>
+<div class="lyrics-part">
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><em>[Zwrotka 3]</em></p></div><div class="lyrics-line-ru"><p><em>[Куплет 3]</em></p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="24">Lubisz muskulaturę</span></p></div><div class="lyrics-line-ru"><p>Ты любишь мускулатуру.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="25">Gestykulujesz, jakbyś znów zdawała ustną maturę</span></p></div><div class="lyrics-line-ru"><p>Жестикулируешь, будто снова сдаёшь устную матуру.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="26">Gdy ciebie widzę, momentalnie zamiast mózgu mam dziurę</span></p></div><div class="lyrics-line-ru"><p>Когда вижу тебя, у меня вместо мозга мгновенно дыра.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="27">Chce z tobą chadzać po knajpach, zamawiać kuskus na spółę</span></p></div><div class="lyrics-line-ru"><p>Хочу с тобой ходить по барам и заказывать кускус на двоих,</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Potem w nocy się kochać i rano zamawiać pizzę</p></div><div class="lyrics-line-ru"><p>Потом ночью заниматься любовью, а на утро заказывать пиццу.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="28">Bo jesteś fajna i dobra, tylko że w złym towarzystwie</span></p></div><div class="lyrics-line-ru"><p>Ты классная и добрая, просто в плохой компании.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="29">Wolicie koksować w loftach, my raczej browar przy Wiśle</span></p></div><div class="lyrics-line-ru"><p>Вы любите нюхать кокс по лофтам, а мы бы пили пиво у Вислы.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Może cię pojmam i koszmar ci zrobię, żeby się przyśnić?</p></div><div class="lyrics-line-ru"><p>Может, я тебя поймаю и устрою кошмар, чтобы потом приснился?</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Okej, za daleko</p></div><div class="lyrics-line-ru"><p>Окей, занесло.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="30">Ale chyba się zatrułem znów nóżkami z galaretą</span></p></div><div class="lyrics-line-ru"><p>Похоже, я снова траванулся ножками в холодце.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="31">Jutro będzie masa Ibupromów, potem kawa, mleko</span></p></div><div class="lyrics-line-ru"><p>Завтра будет куча ибупрофена, потом кофе и молоко.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="32">Ale póki mogę, się na nogi dzisiaj stawiam setą</span></p></div><div class="lyrics-line-ru"><p>Но пока могу, пью ещё один сет в баре.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="33">Gorzka ruda chmura znowu kropi</span></p></div><div class="lyrics-line-ru"><p>Горькая рыжая туча снова моросит.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Zastanawiam się co robisz i gdzie teraz stawiasz kroki</p></div><div class="lyrics-line-ru"><p>Думаю о том, что ты делаешь и куда сейчас идёшь.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>I dlaczego mi nie odpisujesz, kurwa, błagam, odpisz!</p></div><div class="lyrics-line-ru"><p>И почему мне не отвечаешь. Бля, прошу, ответь!</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Nagle jesteś, rzucam setką gdzie popadnie, bo nie zdążę jej dopić</p></div><div class="lyrics-line-ru"><p>И вдруг ты здесь, я швыряю рюмку куда попало, не успеваю допить.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>No, i…</p></div><div class="lyrics-line-ru"><p>Ну, и...</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Butla się tłucze o chodnik</p></div><div class="lyrics-line-ru"><p>Бутылка бьётся о тротуар.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Idzie jakaś para do taksówki, chyba to Grosik</p></div><div class="lyrics-line-ru"><p>Какая-то пара идёт к такси, кажется, это Grosik.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>A ty drąc się wniebogłosy do chłopaka podchodzisz</p></div><div class="lyrics-line-ru"><p>А ты, надрывая горло, подходишь к парню</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>I krzyczysz coś, co sugeruje, że się znacie z przeszłości</p></div><div class="lyrics-line-ru"><p>И орёшь что-то такое, будто вы знакомы сто лет.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Ile minęło sekund? No, maks trzy</p></div><div class="lyrics-line-ru"><p>Сколько прошло секунд? Ну максимум три.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>On bierze tamtą drugą i ją rzuca do taksy</p></div><div class="lyrics-line-ru"><p>Он берёт ту другую и сажает её в такси.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>To jest jest ten cały Piotr? Kurwa mać, jestem tak zły</p></div><div class="lyrics-line-ru"><p>Это и есть весь этот Пётр? Чёрт, я так зол,</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="34">Rzuciłbym butem w ciebie, gdyby to nie były Air Maxy</span></p></div><div class="lyrics-line-ru"><p>Я бы кинул в тебя ботинком, если б это не были Air Max’ы.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="35">Tragicznie zakochana…</span></p></div><div class="lyrics-line-ru"><p>Трагически влюблённая…</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="36">Pocieszyłbym cię, ale muszę iść do domu, żeby chlać do rana</span></p></div><div class="lyrics-line-ru"><p>Я бы тебя утешил, но мне нужно домой, бухать до утра.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Nie chodzi o to, że się kochasz w jakichś innych panach</p></div><div class="lyrics-line-ru"><p>Дело не в том, что ты любишь каких-то других мужчин.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Ale w tej szui, która miastu znana? <span class="keyword" data-key="37">Dramat</span></p></div><div class="lyrics-line-ru"><p>Но в эту шваль, которую все в городе знают? Драма.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Byłem tam, zresztą, w sumie, kto nie był?</p></div><div class="lyrics-line-ru"><p>Я был там, да кто тут, в сущности, не был?</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p>Jest tu cała WWA, z wyjątkiem ciebie</p></div><div class="lyrics-line-ru"><p>Тут вся WWA — кроме тебя.</p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p></p></div><div class="lyrics-line-ru"><p></p></div></div>
+</div>
+<div class="lyrics-part">
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><em>[Outro]</em></p></div><div class="lyrics-line-ru"><p><em>[Аутро]</em></p></div></div>
+<div class="lyrics-line-pair"><div class="lyrics-line-pl"><p><span class="keyword" data-key="38">Zabawa, gospodarze obiecują dobry nastrój, muzykę prima i obecność dziewczyn większą niż zazwyczaj</span></p></div><div class="lyrics-line-ru"><p>Танцы, хозяева обещают хорошее настроение, первоклассную музыку и девушек больше, чем обычно…</p></div></div>
+</div></div>
       </div>
-    </div>
+      </div>
+      <aside class="reference-panel" id="referencePanel">
+        <div class="reference-header">
+          <h4 id="referenceTitle">Справка</h4>
+          <button class="close-reference" id="closeReference" aria-label="Закрыть">×</button>
+        </div>
+        <div class="reference-content" id="referenceContent">
+          <p class="reference-placeholder">Кликни на выделенное слово в тексте, чтобы увидеть справку.</p>
+        </div>
+      </aside>
+    
     </div>
     <footer class="site-footer">
       <p>Разбор треков Taco Hemingway · Trójkąt Warszawski · 2025</p>
     </footer>
   </section>
+        <script>
+var referencesPl = {
+  1: { title: "Wbijam tam z grubej rury, upijam się, mówię bzdury", text: "Bohater wchodzi do klubu. Od razu przechodzi do spożywania alkoholi (głównie wódka), w skutek czego upija się. A po upiciu wiadomo – mówimy więcej, nie koniecznie z głębszym sensem.", url: "https://genius.com/10638103/Taco-hemingway-marsz-marsz/Wbijam-tam-z-grubej-rury-upijam-sie-mowie-bzdury" },
+  2: { title: "Bo widział, jak tańczę w kroplach deszczyku z tej rudej chmu…", text: "Chodzi tu oczywiście o deszcz wódki", url: "https://genius.com/7238682/Taco-hemingway-marsz-marsz/Bo-widzia-jak-tancze-w-kroplach-deszczyku-z-tej-rudej-chmury" },
+  3: { title: "Drga mi grdyka, nie słyszę, bo gra muzyka", text: "Grdyka – u mężczyzn na szyi uwydatnienie chrząstki krtani Drga, ponieważ bohater pije.", url: "https://genius.com/10938697/Taco-hemingway-marsz-marsz/Drga-mi-grdyka-nie-sysze-bo-gra-muzyka" },
+  4: { title: "Te dziewki ciągną te kreski, nie wspomną o Mazowieckim", text: "Tadeusz Mazowiecki jest autorem tzw. polityki grubej kreski, którą przedstawił jako Premier Rządu Kontraktowego 24. sierpnia 1989 roku w swoim expose mówiąc: Rząd, który utworzę, nie ponosi odpowiedzialności za hipotekę, którą dziedziczy. Ma ona jednak wpływ na okoliczności, w których przychodzi nam działać. Przeszłość odkreślamy grubą linią. Odpowiadać będziemy jedynie za to, co uczyniliśmy, by wydobyć Polskę z obecnego stanu załamania. W efekcie politykę grubej kreski obwinia się za brak rozliczenia komunistów rządzących Polską przez pół wieku, brak dekomunizacji życia publicznego i wyciągnięcia konsekwencji wobec nadużywających władzy komunistów. Współczesnej, beztroskiej młodzieży bawiącej się w warszawskich klubach, myśli o polityce nie zaprzątają jednak głów – ich myśli są tu i teraz, przy grubej kresce rozsypanej na gładkiej powierzchni. Zbiegiem okoliczności najbardziej “klubowa” ulica w Warszawie, to Mazowiecka.", url: "https://genius.com/6773949/Taco-hemingway-marsz-marsz/Te-dziewki-ciagna-te-kreski-nie-wspomna-o-mazowieckim" },
+  5: { title: "W tym mieście nikt już nie tańczy", text: "Już jakieś 30 lat temu zanikło tradycyjne tańczenie na imprezach, zniknęły kluby taneczne w których ludzie tańczyli w parach, w młodym pokoleniu mało kto w ogóle potrafi “kroki” jakiegokolwiek tańca. Na dyskotekach ludzie podrygują w losowy i nieskoordynowany sposób do muzyki. Raczej nie znajdziesz w Warszawie (ani też w innym dużym mieście w Polsce) klubu w którym ludzie tańczą ze sobą w parach, a jeśli już taki znajdziesz to będzie on wypełniony 40 latkami.", url: "https://genius.com/18118640/Taco-hemingway-marsz-marsz/W-tym-miescie-nikt-juz-nie-tanczy" },
+  6: { title: "W tym mieście tango to frykas", text: "Taniec to jest coś wyjątkowego w Warszawie, teraz na imprezach zamiast tańczyć, młodzi wciągają biel i piją.", url: "https://genius.com/11608605/Taco-hemingway-marsz-marsz/W-tym-miescie-tango-to-frykas" },
+  7: { title: "Panowie owocowi chcą bananem mango dotykać", text: "Panowie owocowi to oczywiście bananowi chłopcy. Synowie bogatych rodziców, których głównym/jedynym zajęciem to wydawanie pieniędzy zarobionych przez ich “starych”. “Chcą bananem dotykać mango” bananem prawdopodobnie jest penis, a mango to wagina(mango po wycięciu kawałka wygląda bardzo podobnie). Jak wiadomo, każdy bananowy chłopiec uznaje wieczór za nieudany jeśli nie zaliczy.", url: "https://genius.com/6762388/Taco-hemingway-marsz-marsz/Panowie-owocowi-chca-bananem-mango-dotykac" },
+  8: { title: "Gardło nam usycha po narkotykach", text: "Wiele nielegalnych substancji psychoaktywnych (choć w tym wypadku zapewne chodzi konkretnie o marihuanę) powoduje wysychanie błon śluzowych w jamie ustnej i nosie.", url: "https://genius.com/7862670/Taco-hemingway-marsz-marsz/Gardo-nam-usycha-po-narkotykach" },
+  9: { title: "Każdy się z czartem i niefartem i ze szklanką boryka", text: "Każdy uczestnik imprezy pije alkohol i źle się przez to czuje.", url: "https://genius.com/11612303/Taco-hemingway-marsz-marsz/Kazdy-sie-z-czartem-i-niefartem-i-ze-szklanka-boryka" },
+  10: { title: "A twoje usta się błyszczały jak lipcowe czereśnie", text: "W tym wersie chodzi o kolor szminki w barwach czereśni ale również taco zastosował tu ciekawy zabieg dzięki któremu słowo “błyszczały” brzmiało lekko jak “puszczały”. Zabieg ten pozwala na delikatne zasugerowanie że dziewczyna była niewierna .", url: "https://genius.com/11209028/Taco-hemingway-marsz-marsz/A-twoje-usta-sie-byszczay-jak-lipcowe-czeresnie" },
+  11: { title: "Ciebie znowu nie było", text: "Podmiot liryczyny odwiedza wszystkie miejsca, w których mógłby znaleźć adresatkę tego utworu, ta jednak zdaje się go unikać/wszystko układa się przeciw niemu, że nie może jej spotkać. Podmiot liryczny był we wszystkich popularnych miejscach, w których jest tłoczno i gdzie mógłby znaleźć adresatkę", url: "https://genius.com/8757746/Taco-hemingway-marsz-marsz/Ciebie-znowu-nie-byo" },
+  12: { title: "Gdybyś nie istniała, miastu by wygodniej się żyło", text: "Mniej nieprzespanych nocy, mniej złamanych serc, mniej desperackich prób poderwania tej jednej.", url: "https://genius.com/10495096/Taco-hemingway-marsz-marsz/Gdybys-nie-istniaa-miastu-by-wygodniej-sie-zyo" },
+  13: { title: "Na tych nogach, które ja nazywam karabinami", text: "Kobiety często jak wychodzą w miasto, zakładają szpilki. Być może chodzi o to, że Taco porównuje dźwięk wydawany przez szpilki do dźwięku karabinu. Noga (zgrabna w szczególności) może przywodzić na myśl kolbę karabinu https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRHfMkJ3D67UcbEIisUStm-7krv-XKjuYs5ve2zpoFP0IaNZa64vQ", url: "https://genius.com/6712017/Taco-hemingway-marsz-marsz/Na-tych-nogach-ktore-ja-nazywam-karabinami" },
+  14: { title: "No, mon dieu, wciąż kochasz mnie, ja w to nie wątpię", text: "Mon dieu (z francuskiego) – o mój Boże.", url: "https://genius.com/8647435/Taco-hemingway-marsz-marsz/No-mon-dieu-wciaz-kochasz-mnie-ja-w-to-nie-watpie" },
+  15: { title: "Szukam cię po shot barach", text: "Shot-bar – bary, w których serwuje się głównie “shoty” (kieliszeczek wódki) wraz z przystawką. W Warszawie ich pełno.", url: "https://genius.com/10331156/Taco-hemingway-marsz-marsz/Szukam-cie-po-shot-barach" },
+  16: { title: "Z dziewczynami wyglądacie, jakbyście były na Oscarach", text: "Żeby przyciągnąć atencję mężczyzn dziewczyny wychodzące wieczorem do klubu ubierają się w swe najlepsze kreacje, które często są rownież dosyć skąpe. Taco porównuje takie dziewczyny (w tym: swoją eks i jej koleżanki) do żeńskich gwiazd filmowego ekranu, które na największe festiwale, rozdania nagród, w szczególności rozdania Oscarów przywdziewają swoje najdroższe i najlepsze suknie, które, żeby aktorki mogły zyskać uwagę fotoreporterów, wyglądają wyzywająco i odsłaniają wiele.", url: "https://genius.com/10117399/Taco-hemingway-marsz-marsz/Z-dziewczynami-wygladacie-jakbyscie-byy-na-oscarach" },
+  17: { title: "Wiążesz włosy w cebulę", text: "Inaczej, włosy związane w kok", url: "https://genius.com/8055798/Taco-hemingway-marsz-marsz/Wiazesz-wosy-w-cebule" },
+  18: { title: "I pewnie świat Cię denerwuje jak Alutka Jędrulę", text: "Alutka i Jędrula to bohaterowie serialu Rodzina Zastępcza Jest to małżeństwo i są oni swoimi przeciwieństwami. Alutka to roztargniona artystka z głową w chmurach, a Jędrula to poważny biznesmen. Przeciwność charakterów często wywołuje u nich spory i nerwy. Humorystyczne porównanie ma pokazać, że świat podobnie denerwuje bohaterkę utworu.", url: "https://genius.com/5073308/Taco-hemingway-marsz-marsz/I-pewnie-swiat-cie-denerwuje-jak-alutka-jedrule" },
+  19: { title: "Latacie po mieście jak Bójka, Bajka, Brawurka", text: "Kolejne humorystyczne porównanie do bohaterów serialu. Bójka, Bajka i Brawurka pochodzą z serialu animowanego Atomówki Dosłownie latały one po mieście, po to by chronić je przed złoczyńcami.", url: "https://genius.com/5073313/Taco-hemingway-marsz-marsz/Latacie-po-miescie-jak-bojka-bajka-brawurka" },
+  20: { title: "Dźwigając swoje atrybuty: wóda, szampan, bibułka", text: "Każda z atomówek miała jakąś charakterystyczną dla siebie supermoc – atrybut. Tu słowo “atybut” (w takim znaczeniu jak w sztuce, czyli “określony, symboliczny przedmiot, dodawany jako znak rozpoznawczy”) jest częścią subtelnej ironii. Uwypukla ona fakt, że panny nie rozstają się z używkami oraz że nie wyróżniają się niczym innym. ** Kiedy była podmiotu lirycznego i jej koleżanki wyjdą na miasto, zawsze mają przy sobie alkohole i bibułkę do skrętów.", url: "https://genius.com/11609563/Taco-hemingway-marsz-marsz/Dzwigajac-swoje-atrybuty-woda-szampan-bibuka" },
+  21: { title: "A twoje rzęsy wobec mężczyzn są jak łańcuch dla kundla", text: "Wygląd ukochanej Szcześniaka trzyma mężczyzn krótko, przyciąga tak jak łańcuch psa", url: "https://genius.com/31881931/Taco-hemingway-marsz-marsz/A-twoje-rzesy-wobec-mezczyzn-sa-jak-ancuch-dla-kundla" },
+  22: { title: "Szukasz zapalniczki, ja bym dał Ci ogień", text: "Podwójne znaczenie wersu, ognia, jako zapalniczki, zapałek do odpalenia papierosa, a także ognia jako rozgrzania i podniecenia kobiety.", url: "https://genius.com/8236786/Taco-hemingway-marsz-marsz/Szukasz-zapalniczki-ja-bym-da-ci-ogien" },
+  23: { title: "Chociaż w zeszły piątek przecież poszłaś za tamtym Piotrkiem", text: "Piotr, znany jako warszawski łotr. Jeden z trzech bohaterów płyty.", url: "https://genius.com/8272498/Taco-hemingway-marsz-marsz/Chociaz-w-zeszy-piatek-przeciez-poszas-za-tamtym-piotrkiem" },
+  24: { title: "Lubisz muskulaturę", text: "Dziewczyny bardzo często lubią wyćwiczonych i muskularnych mężczyzn", url: "https://genius.com/30441362/Taco-hemingway-marsz-marsz/Lubisz-muskulature" },
+  25: { title: "Gestykulujesz, jakbyś znów zdawała ustną maturę", text: "Przy ustnych wypowiedziach często gestykulujemy, chcąc sobie pomóc.", url: "https://genius.com/10052897/Taco-hemingway-marsz-marsz/Gestykulujesz-jakbys-znow-zdawaa-ustna-mature" },
+  26: { title: "Gdy ciebie widzę, momentalnie zamiast mózgu mam dziurę", text: "Dziewczyna tak ładna, że człowiek zaczyna się jąkać, brakuje mu tematów do rozmowy.", url: "https://genius.com/10329021/Taco-hemingway-marsz-marsz/Gdy-ciebie-widze-momentalnie-zamiast-mozgu-mam-dziure" },
+  27: { title: "Chce z tobą chadzać po knajpach, zamawiać kuskus na spółę", text: "Kuskus – dla muzułmanów jest symbolem bogactwa i szczęścia. Otrzymuje się go z twardej pszenicy durum (tej samej, z której robi się włoski makaron). Mąkę pszenną miesza się z wodą, a następnie formuje charakterystyczne małe, żółte granulki, które znamy jako kaszę kuskus.", url: "https://genius.com/10536328/Taco-hemingway-marsz-marsz/Chce-z-toba-chadzac-po-knajpach-zamawiac-kuskus-na-spoe" },
+  28: { title: "Bo jesteś fajna i dobra, tylko że w złym towarzystwie", text: "Podmiot liryczny jest przekonany o szlachetnej naturze panny, a winą za jej wątpliwe zachowanie pragnie obarczyć nieodpowiednie towarzystwo (choć w rzeczywistości ona może przyczyniać się do “nieodpowiedniości” owego towarzystwa)", url: "https://genius.com/7137506/Taco-hemingway-marsz-marsz/Bo-jestes-fajna-i-dobra-tylko-ze-w-zym-towarzystwie" },
+  29: { title: "Wolicie koksować w loftach, my raczej browar przy Wiśle", text: "Może też być nawiązanie do “złego towarzystwa” ukochanej Taco. Ona zadaje się z młodzieżą z bogatych domów, która zażywa kokainę na imprezach w swoich domach (loftach, czyli zaadaptowanych na potrzeby mieszkalne magazynach), a Taco spotyka się ze swoimi znajomymi nad Wisłą, pijąc piwo, ponieważ ma nieco okrojony budżet.", url: "https://genius.com/7440102/Taco-hemingway-marsz-marsz/Wolicie-koksowac-w-loftach-my-raczej-browar-przy-wisle" },
+  30: { title: "Ale chyba się zatrułem znów nóżkami z galaretą", text: "Bohater czuje się “lekko struty” i, jak wielu z nas, odpowiedzialność za to woli zrzucić raczej na to co zjadł: bo przecież za takie samopoczucie na pewno nie można obwiniać kolejnych wlewanych w siebie setek. Nóżki w galarecie to swoją drogą dobra zagrycha, często serwowana w warszawskich shotbarach.", url: "https://genius.com/7621356/Taco-hemingway-marsz-marsz/Ale-chyba-sie-zatruem-znow-nozkami-z-galareta" },
+  31: { title: "Jutro będzie masa Ibupromów, potem kawa, mleko", text: "Chodzi oczywiście o kaca, którego podmiot liryczny będzie miał po tej całej ilości wypitego alkoholu.", url: "https://genius.com/11608644/Taco-hemingway-marsz-marsz/Jutro-bedzie-masa-ibupromow-potem-kawa-mleko" },
+  32: { title: "Ale póki mogę, się na nogi dzisiaj stawiam setą", text: "Póki jest w stanie to będzie pił", url: "https://genius.com/31881997/Taco-hemingway-marsz-marsz/Ale-poki-moge-sie-na-nogi-dzisiaj-stawiam-seta" },
+  33: { title: "Gorzka ruda chmura znowu kropi", text: "Follow-up do pierwszej zwrotki https://genius.com/7238682 Bohater cały czas pije.", url: "https://genius.com/10495350/Taco-hemingway-marsz-marsz/Gorzka-ruda-chmura-znowu-kropi" },
+  34: { title: "Rzuciłbym butem w ciebie, gdyby to nie były Air Maxy", text: "W kulturze arabskiej (Taco urodził się w Kairze) rzucenie w kogoś butem jest wyrazem największej pogardy i obelgi. https://www.youtube.com/watch?v=2VJYclrPMDI Jednak szkoda Air Maxów na EX. W środowisku fanów rapu Air Maxy mają status butów kultowych – powstają o nich rymy, zwrotki a nawet całe utwory. Stawianie ich w hierarchii wartości wyżej niż dziewcząt (szczególnie ex) nie jest wcale rzadkie ;) https://instagram.com/p/4bRNi_MFJh/?taken-by=rapgeniuspolska", url: "https://genius.com/7764167/Taco-hemingway-marsz-marsz/Rzucibym-butem-w-ciebie-gdyby-to-nie-byy-air-maxy" },
+  35: { title: "Tragicznie zakochana…", text: "Motyw miłości niespełnionej, nieszczęśliwej. Pojawia się w wielu utworach literackich, takich jak “Romeo i Julia”, “Pan Tadeusz”, “Dziady cz. IV”, “Lalka”.", url: "https://genius.com/10329031/Taco-hemingway-marsz-marsz/Tragicznie-zakochana" },
+  36: { title: "Pocieszyłbym cię, ale muszę iść do domu, żeby chlać do rana", text: "Oto jak bardzo szybko zmieniły się dla bohatera priorytety. Wcześniej bohater widząc dziewczynę rzucił butlą alkoholu o beton rozbijając ją, natomiast teraz to on porzuca ją, by udać się chlać do domu.", url: "https://genius.com/10703445/Taco-hemingway-marsz-marsz/Pocieszybym-cie-ale-musze-isc-do-domu-zeby-chlac-do-rana" },
+  37: { title: "Dramat", text: "Podsumowanie wcześniejszych wersów. Bohater jest wyraźnie zniesmaczony, a nawet można powiedzieć, zażenowany, postawą bohaterki ponieważ darzy ona uczuciem mężczyznę, który w ogóle na to nie zasługuje.", url: "https://genius.com/17725659/Taco-hemingway-marsz-marsz/Dramat" },
+  38: { title: "Zabawa, gospodarze obiecują dobry nastrój, muzykę prima i ob…", text: "Fragment pochodzi z kroniki PRL z roku 1984 roku: https://youtu.be/NQu6v-zpavM?t=12s", url: "https://genius.com/7255093/Taco-hemingway-marsz-marsz/Zabawa-gospodarze-obiecuja-dobry-nastroj-muzyke-prima-i-obecnosc-dziewczyn-wieksza-niz-zazwyczaj" }
+};
+var referencesRu = {
+  
+};
+  </script>
+  <script src="track.js"></script>
 </body>
 </html>
